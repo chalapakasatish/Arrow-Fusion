@@ -492,7 +492,7 @@ public class BezierPathController : MonoBehaviour
                 }
             }
 
-            var length = ballsToDelete.Count * Factory.DistanceBetweenBalls * 0.5f;
+            var length = ballsToDelete.Count * Factory.DistanceBetweenBalls * 0.4f;
             
 
             //NOTE: scores
@@ -567,7 +567,8 @@ public class BezierPathController : MonoBehaviour
         {
             BallSequence.Remove(ball);
         }
-        Destroy(ball.gameObject);
+        //Destroy(ball.gameObject);
+        ball.gameObject.SetActive(false);
     }
 
     public IEnumerator DelayedDecreaseSpeed(float delay, float newSpeed)

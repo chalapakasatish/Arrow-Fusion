@@ -12,6 +12,7 @@ public class Ball : MonoBehaviour
     /// ID of ball. -1 if bonus.
     /// </summary>
     public int BallId { get; private set; }
+    public int Count { get => count; set => count = value; }
 
     /// <summary>
     /// Path controller.
@@ -19,7 +20,7 @@ public class Ball : MonoBehaviour
     public BezierPathController PathController;
 
     public bool MustBeDestroyed = true;
-    public int count = 1;
+    int count = 1;
 
     public void SetBallId(int id)
     {
@@ -42,11 +43,13 @@ public class Ball : MonoBehaviour
     {
         if (other.tag == "Arrow")
         {
-            ObjectPoolManager.Instance.ReturnArrowToPool(other.gameObject);
-            other.transform.position = Vector3.zero;
-            other.transform.rotation = Quaternion.identity;
-            count--;
-            if(count <= 0)
+            Destroy(other.gameObject);
+            ObjectPoolManager.Instance.arrowPool.Clear();
+            //ObjectPoolManager.Instance.ReturnArrowToPool(other.gameObject);
+            //other.transform.position = Vector3.zero;
+            //other.transform.rotation = Quaternion.identity;
+            Count--;
+            if(Count <= 0)
             {
                 //PathController.Correction();
                 //PathController.DestroyBall(this);
@@ -55,9 +58,10 @@ public class Ball : MonoBehaviour
                     //PathController.StopSequence();
                     PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this,0f));
                 }
-                if (count <= 0)
+                if (Count <= 0)
                 {
                     PathController.DestroyBall(this);
+                    //PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this, 0f));
                 }
                     
             }
@@ -66,8 +70,8 @@ public class Ball : MonoBehaviour
         GetComponent<AnimationPlayer>().Play(AnimationThrowType.OnCollide);
         if (PathController.BallSequence.Contains(this)) return;
         if (other.gameObject.tag == "BallsTrap") return;
-        
-        StopAllCoroutines();
+
+        //StopAllCoroutines();
         //if (other.gameObject.tag == "Ball")
         //{
         //    PathController.InsertBallInSequence(this, other.GetComponent<Ball>());

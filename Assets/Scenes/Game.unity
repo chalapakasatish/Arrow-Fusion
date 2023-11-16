@@ -1565,7 +1565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 5467899234292356837, guid: d73c27c0ef9bcf349b356869bd46f7d8,
     type: 3}
-  poolSize: 10
+  poolSize: 0
   arrowPool: []
 --- !u!4 &1464753735
 Transform:
@@ -1728,7 +1728,7 @@ MonoBehaviour:
   AudioSource: {fileID: 1546681673}
   BallsRoot: {fileID: 1548543145}
   BallsDistanceMultiplicity: 1
-  GeneratedBallsAmount: 100
+  GeneratedBallsAmount: 50
   GeneratedBalls: 0
   ProbabilityColorChange: 0.800000011920929
   BonusProbability: 0.10000000149011612
