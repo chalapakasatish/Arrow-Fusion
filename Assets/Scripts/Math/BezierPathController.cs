@@ -143,7 +143,7 @@ public class BezierPathController : MonoBehaviour
             var nextBall = GetBezierPath(BallSequence[i + 1].transform.position);
             var d = currentBall - nextBall;
             if (d < Factory.DistanceBetweenBalls) 
-                MoveBallBackward(BallSequence[i + 1].GetComponent<Ball>(),Mathf.Abs(d-Factory.DistanceBetweenBalls));
+                MoveBallBackward(BallSequence[i + 1].GetComponent<Ball>(),Mathf.Abs(d - Factory.DistanceBetweenBalls));
             else
                 MoveBallForward(BallSequence[i + 1].GetComponent<Ball>(), Mathf.Abs(d - Factory.DistanceBetweenBalls));
         }
@@ -380,7 +380,6 @@ public class BezierPathController : MonoBehaviour
     {
         while (true)
         {
-
             MoveAllBallsForward(balls, BallsSpeed * Time.deltaTime);
             yield return new WaitForEndOfFrame();
         }
@@ -426,7 +425,7 @@ public class BezierPathController : MonoBehaviour
     /// <param name="insertedBall">Ball, which had been inserted in sequence.</param>
     /// <param name="delayTime"></param>
     /// <returns></returns>
-    private IEnumerator DelayedCheckEqualBalls(Ball insertedBall, float delayTime)
+    public IEnumerator DelayedCheckEqualBalls(Ball insertedBall, float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
         var currentId = int.MinValue;

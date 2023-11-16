@@ -483,7 +483,7 @@ MonoBehaviour:
   BallSequence: []
   Factory: {fileID: 1558221129}
   SegmentsPerCurve: 10
-  BallsSpeed: 10
+  BallsSpeed: 30
   RelaxedSpeed: 1
   BackBallsSpeed: 3
   InsertionSpeedMultiplicity: 2
@@ -492,7 +492,7 @@ MonoBehaviour:
     type: 3}
   PopupScoresPrefab: {fileID: 100000, guid: f27003cc6bef0ed48981b3bcf0fb6f29, type: 3}
   BonusRadiusDestroy: 2
-  MaxEqualsBalls: 2
+  MaxEqualsBalls: 1
   BlastSound: {fileID: 8300000, guid: 1b78d60bf804e7c4cb62a817087eb55e, type: 3}
   DestroySound: {fileID: 8300000, guid: d8ae0df1c09b5a1499cf1359f7693776, type: 3}
   MovingSound: {fileID: 8300000, guid: 3535952f6ac63ad4f82c1908cc0a113a, type: 3}
@@ -1728,7 +1728,7 @@ MonoBehaviour:
   AudioSource: {fileID: 1546681673}
   BallsRoot: {fileID: 1548543145}
   BallsDistanceMultiplicity: 1
-  GeneratedBallsAmount: 50
+  GeneratedBallsAmount: 100
   GeneratedBalls: 0
   ProbabilityColorChange: 0.800000011920929
   BonusProbability: 0.10000000149011612

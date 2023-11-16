@@ -19,7 +19,7 @@ public class Ball : MonoBehaviour
     public BezierPathController PathController;
 
     public bool MustBeDestroyed = true;
-    public int count = 3;
+    public int count = 1;
 
     public void SetBallId(int id)
     {
@@ -48,7 +48,18 @@ public class Ball : MonoBehaviour
             count--;
             if(count <= 0)
             {
-                Destroy(gameObject);
+                //PathController.Correction();
+                //PathController.DestroyBall(this);
+                if (PathController.BallSequence.Contains(this))
+                {
+                    //PathController.StopSequence();
+                    PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this,0f));
+                }
+                if (count <= 0)
+                {
+                    PathController.DestroyBall(this);
+                }
+                    
             }
         }
 
@@ -57,11 +68,11 @@ public class Ball : MonoBehaviour
         if (other.gameObject.tag == "BallsTrap") return;
         
         StopAllCoroutines();
-        if (other.gameObject.tag == "Ball")
-        {
-            PathController.InsertBallInSequence(this, other.GetComponent<Ball>());
-            MustBeDestroyed = false;
-        }
+        //if (other.gameObject.tag == "Ball")
+        //{
+        //    PathController.InsertBallInSequence(this, other.GetComponent<Ball>());
+        //    MustBeDestroyed = false;
+        //}
     }
 
     private IEnumerator ShootCoroutine(Vector3 target, float time)
