@@ -19,6 +19,7 @@ public class Ball : MonoBehaviour
     public BezierPathController PathController;
 
     public bool MustBeDestroyed = true;
+    public int count = 3;
 
     public void SetBallId(int id)
     {
@@ -39,6 +40,18 @@ public class Ball : MonoBehaviour
     /// <param name="other"></param>
     void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "Arrow")
+        {
+            ObjectPoolManager.Instance.ReturnArrowToPool(other.gameObject);
+            other.transform.position = Vector3.zero;
+            other.transform.rotation = Quaternion.identity;
+            count--;
+            if(count <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+
         GetComponent<AnimationPlayer>().Play(AnimationThrowType.OnCollide);
         if (PathController.BallSequence.Contains(this)) return;
         if (other.gameObject.tag == "BallsTrap") return;
