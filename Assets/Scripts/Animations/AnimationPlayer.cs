@@ -32,9 +32,9 @@ public class AnimationPlayer : MonoBehaviour
 
     void Awake()
     {
-        //_animation = GetComponent<Animation>();
-        //Register();
-        //Play(AnimationThrowType.OnAwake);
+        _animation = GetComponent<Animation>();
+        Register();
+        Play(AnimationThrowType.OnAwake);
     }
 
     /// <summary>

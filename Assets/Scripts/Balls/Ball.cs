@@ -1,5 +1,3 @@
-
-
 using System.Collections;
 using UnityEngine;
 
@@ -25,6 +23,7 @@ public class Ball : MonoBehaviour
     public void SetBallId(int id)
     {
         BallId = id;
+        Debug.Log(BallId);
         GetComponent<MeshRenderer>().material = (id == -1) ? GameObject.FindGameObjectWithTag("BallsFactory").GetComponent<BallsFactory>().BonusMaterial : GameObject.FindGameObjectWithTag("BallsFactory").GetComponent<BallsFactory>().AvailableMaterials[id];
     }
 

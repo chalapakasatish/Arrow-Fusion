@@ -1,5 +1,3 @@
-
-
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -35,7 +33,7 @@ public class BallsFactory : MonoBehaviour
     /// <summary>
     /// Amount of generated balls.
     /// </summary>
-    public int GeneratedBallsAmount = 50;
+    public int GeneratedBallsAmount = 10;
 
     /// <summary>
     /// Already generated balls.
@@ -159,7 +157,7 @@ public class BallsFactory : MonoBehaviour
                 nextId = _prevId;
             }
         }
-        var ballComponent = ball.GetComponent<Ball>();
+        Ball ballComponent = ball.GetComponent<Ball>();
         ballComponent.SetBallId(nextId);
         ballComponent.NextNode = PathController.PathNodes[0];
         ballComponent.PathController = PathController;

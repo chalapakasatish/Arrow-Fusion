@@ -417,7 +417,7 @@ public class BezierPathController : MonoBehaviour
         yield return new WaitForSeconds(delay);
         Factory.StartFactory();
         StartCoroutine(MoveContiniously(balls));
-        //AnimationManager.RunAnimation(AnimationThrowType.OnResume);
+        AnimationManager.RunAnimation(AnimationThrowType.OnResume);
     }
 
     /// <summary>
@@ -497,10 +497,10 @@ public class BezierPathController : MonoBehaviour
             
 
             //NOTE: scores
-            var prefab = (GameObject)Instantiate(PopupScoresPrefab, ballsToDelete[0].transform.position,Quaternion.identity);
+            //var prefab = (GameObject)Instantiate(PopupScoresPrefab, ballsToDelete[0].transform.position,Quaternion.identity);
             //GameObject.FindGameObjectWithTag("GlobalManager").GetComponent<ScoreManager>().Scores +=
             //    ballsToDelete.Count*10;
-            prefab.GetComponentInChildren<TextMesh>().text = ("+" + ballsToDelete.Count*10).ToString();
+            //prefab.GetComponentInChildren<TextMesh>().text = ("+" + ballsToDelete.Count*10).ToString();
 
             MainAudioSource.Stop();
             MainAudioSource.clip = DestroySound;
@@ -515,13 +515,13 @@ public class BezierPathController : MonoBehaviour
 			BallsSpeed = 0;
 			yield return new WaitForSeconds(0.7f);
 			BallsSpeed = speed;
-			
-			//Debug.Log("Count:"+ballsBeforeDeletingSequence.Count.ToString()+" Length:"+length.ToString()+" Time:"+(length / BackBallsSpeed).ToString());
-			//StartCoroutine(
-				//MoveSequenceBackward(ballsBeforeDeletingSequence, length, BackBallsSpeed)
-				//);
-			
-			AdditionalAudioSource.clip = MovingSound;
+
+            Debug.Log("Count:" + ballsBeforeDeletingSequence.Count.ToString() + " Length:" + length.ToString() + " Time:" + (length / BackBallsSpeed).ToString());
+            StartCoroutine(
+                MoveSequenceBackward(ballsBeforeDeletingSequence, length, BackBallsSpeed)
+                );
+
+            AdditionalAudioSource.clip = MovingSound;
         	AdditionalAudioSource.Play();
         	var passedTime = 0f;
         	while (passedTime <= length / BackBallsSpeed)
