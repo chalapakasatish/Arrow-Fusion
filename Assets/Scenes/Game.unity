@@ -482,7 +482,7 @@ MonoBehaviour:
   AnimationManager: {fileID: 2101368369}
   BallSequence: []
   Factory: {fileID: 1558221129}
-  SegmentsPerCurve: 20
+  SegmentsPerCurve: 10
   BallsSpeed: 10
   RelaxedSpeed: 1
   BackBallsSpeed: 3
@@ -969,7 +969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508297353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1325,10 +1325,10 @@ MonoBehaviour:
   PathController: {fileID: 262769696}
   Factory: {fileID: 1558221129}
   ShootLength: 100
-  ShootSpeed: 10
+  ShootSpeed: 30
   MeshRenderer: {fileID: 508297354}
   AnimationManager: {fileID: 2101368369}
-  ShootDelay: 1
+  ShootDelay: 0.5
   ballstrap: {fileID: 0}
 --- !u!82 &1173560586
 AudioSource:
@@ -1434,7 +1434,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173560584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -27.11}
+  m_LocalPosition: {x: 0, y: 0, z: -24.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

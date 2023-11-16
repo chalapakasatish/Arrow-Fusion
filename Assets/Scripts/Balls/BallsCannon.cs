@@ -142,7 +142,7 @@ public class BallsCannon : MonoBehaviour
         
         _audioSource.Play();
         var shootVector = transform.forward;
-        var ball = (GameObject)Instantiate(BallPrefab,new Vector3(transform.position.x + 1f,transform.position.y,transform.position.z), Quaternion.identity);
+        var ball = (GameObject)Instantiate(BallPrefab,transform.position/*new Vector3(transform.position.x + 1f,transform.position.y,transform.position.z + 2f)*/, Quaternion.identity);
         
         var ballController = ball.GetComponent<Ball>();
         ballController.SetBallId(_nextIndex);

@@ -493,7 +493,7 @@ public class BezierPathController : MonoBehaviour
                 }
             }
 
-            var length = ballsToDelete.Count * Factory.DistanceBetweenBalls;
+            var length = ballsToDelete.Count * Factory.DistanceBetweenBalls * 0.5f;
             
 
             //NOTE: scores
@@ -513,7 +513,7 @@ public class BezierPathController : MonoBehaviour
 			
 			var speed = BallsSpeed;
 			BallsSpeed = 0;
-			yield return new WaitForSeconds(0.7f);
+			yield return new WaitForSeconds(0.5f);
 			BallsSpeed = speed;
 
             Debug.Log("Count:" + ballsBeforeDeletingSequence.Count.ToString() + " Length:" + length.ToString() + " Time:" + (length / BackBallsSpeed).ToString());
