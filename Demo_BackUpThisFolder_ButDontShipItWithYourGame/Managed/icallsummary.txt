@@ -789,6 +789,7 @@ UnityEngine.Renderer::get_sortingLayerID
 UnityEngine.Renderer::get_sortingOrder
 UnityEngine.Renderer::SetMaterial
 UnityEngine.Renderer::get_bounds_Injected
+UnityEngine.Renderer::GetMaterial
 UnityEngine.Rendering.CommandBuffer::ValidateAgainstExecutionFlags
 UnityEngine.Rendering.CommandBuffer::CreateGPUFence_Internal
 UnityEngine.Rendering.CommandBuffer::InitBuffer
