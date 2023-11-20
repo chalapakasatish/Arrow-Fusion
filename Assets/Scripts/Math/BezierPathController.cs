@@ -492,7 +492,7 @@ public class BezierPathController : MonoBehaviour
                 }
             }
 
-            var length = ballsToDelete.Count * Factory.DistanceBetweenBalls * 0.4f;
+            var length = ballsToDelete.Count * Factory.DistanceBetweenBalls * 1.1f;
             
 
             //NOTE: scores
@@ -539,7 +539,7 @@ public class BezierPathController : MonoBehaviour
             if (nextCheckBall != null)
             {
 				//Correction();
-                StartCoroutine(DelayedCheckEqualBalls(nextCheckBall,0));// length / BackBallsSpeed));
+                StartCoroutine(DelayedCheckEqualBalls(nextCheckBall, length / BackBallsSpeed));// length / BackBallsSpeed));
                 
             }else{
 				StartSequence(0);

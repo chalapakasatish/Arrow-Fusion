@@ -132,8 +132,6 @@ struct AnimationMatching_tD71DA60771F28F484F965D9F2047F537D798DBB1;
 struct AnimationPlayer_t35623DE7A682BE69516DD61178200DC230B0F4D1;
 // System.ArgumentException
 struct ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263;
-// Arrow
-struct Arrow_t7048A6830A9F76E0448BBD44FD9C3C00BC138DBF;
 // ArrowShooter
 struct ArrowShooter_tA674DFD1CA3B261615831EDF56016B9510FD120C;
 // UnityEngine.AudioClip
@@ -264,7 +262,6 @@ IL2CPP_EXTERN_C RuntimeClass* IDisposable_t030E0496B4E0E4E4F086825007979AF51F724
 IL2CPP_EXTERN_C RuntimeClass* IEnumerable_1_t1228C664DBA393D1A7785F8C85E47D7FAA949F51_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* IEnumerator_1_tA9C9A1435031C72475614CCA98514D074EA904DA_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* IEnumerator_t7B609C2FFA6EB5167D9C62A0C32A21DE2F666DAA_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* List_1_t6F8B167DABA1E067E8E93E624709CAF42B91966B_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* List_1_t77B94703E05C519A9010DD0614F757F974E1CD8B_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B_il2cpp_TypeInfo_var;
@@ -304,8 +301,8 @@ IL2CPP_EXTERN_C String_t* _stringLiteral50C08DEB1B54D15F60D3F3BB5B810620CE358F0A
 IL2CPP_EXTERN_C String_t* _stringLiteral5EE7F62DDB9F3925A996DBAB8AE1873A42CCDD35;
 IL2CPP_EXTERN_C String_t* _stringLiteral6F6FF6CD6EB3EA52B18703D83FA37B118DB14C2B;
 IL2CPP_EXTERN_C String_t* _stringLiteral90847770A7CD84A207AAAB6942B112C808870D5C;
+IL2CPP_EXTERN_C String_t* _stringLiteral9CEB4D81FE1382FF120AEE05E403D6F7BCE690D2;
 IL2CPP_EXTERN_C String_t* _stringLiteralAF4FE737DB07A38DC7B9A34B4BA555906EC0EFA9;
-IL2CPP_EXTERN_C String_t* _stringLiteralB6E875256732E36B6894A0DF3A01DE33CDFEFE45;
 IL2CPP_EXTERN_C const RuntimeMethod* BezierPathController_Awake_m4CB74B651272278C9F490567883214B12612D8D9_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisAnimationPlayer_t35623DE7A682BE69516DD61178200DC230B0F4D1_m71AEC8FD359BA7B5A00E4864AA6587BD5334C6AA_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisAnimation_t6593B06C39E3B139808B19F2C719C860F3F61040_mC2FF017155293B66CD07DC5916A37D54F3DCC290_RuntimeMethod_var;
@@ -1409,11 +1406,6 @@ struct AnimationPlayer_t35623DE7A682BE69516DD61178200DC230B0F4D1  : public MonoB
 	Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* ____animation_6;
 };
 
-// Arrow
-struct Arrow_t7048A6830A9F76E0448BBD44FD9C3C00BC138DBF  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
-{
-};
-
 // ArrowShooter
 struct ArrowShooter_tA674DFD1CA3B261615831EDF56016B9510FD120C  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -1511,6 +1503,10 @@ struct BallsFactory_tA3C187366ABF98F549BF792903FAB8B308904E80  : public MonoBeha
 	int32_t ____prevId_19;
 	// System.Boolean BallsFactory::_alreadyStarted
 	bool ____alreadyStarted_20;
+	// System.Int32 BallsFactory::randomNumber
+	int32_t ___randomNumber_21;
+	// System.Int32 BallsFactory::lastNumber
+	int32_t ___lastNumber_22;
 };
 
 // BallsTrap
@@ -2100,10 +2096,6 @@ struct Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184_StaticFields
 
 // AnimationPlayer
 
-// Arrow
-
-// Arrow
-
 // ArrowShooter
 
 // ArrowShooter
@@ -2326,8 +2318,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Where_TisRuntimeObj
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* List_1_get_Item_m33561245D64798C2AB07584C0EC4F240E4839A38_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, int32_t ___0_index, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<System.Object>::Clear()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Clear_m16C1F2C61FED5955F10EB36BC1CB2DF34B128994_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Collections.Generic.List`1<System.Object>::Contains(T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool List_1_Contains_m4C9139C2A6B23E9343D3F87807B32C6E2CFE660D_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___0_item, const RuntimeMethod* method) ;
 // System.Int32 System.Collections.Generic.List`1<System.Object>::get_Count()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_m4407E4C389F22B8CEC282C15D56516658746C383_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) ;
 // T UnityEngine.Object::Instantiate<System.Object>(T,UnityEngine.Vector3,UnityEngine.Quaternion)
@@ -2336,6 +2326,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Object_Instantiate_TisRuntimeO
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 List_1_get_Item_m8F2E15FC96DA75186C51228128A0660709E4E810_gshared (List_1_t77B94703E05C519A9010DD0614F757F974E1CD8B* __this, int32_t ___0_index, const RuntimeMethod* method) ;
 // TSource System.Linq.Enumerable::Last<System.Object>(System.Collections.Generic.IEnumerable`1<TSource>)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Last_TisRuntimeObject_m39971562AFD7CCF7CFF65E8CA0A457CCC3E18F8F_gshared (RuntimeObject* ___0_source, const RuntimeMethod* method) ;
+// System.Boolean System.Collections.Generic.List`1<System.Object>::Contains(T)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool List_1_Contains_m4C9139C2A6B23E9343D3F87807B32C6E2CFE660D_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___0_item, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<UnityEngine.Vector3>::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_mC54E2BCBE43279A96FC082F5CDE2D76388BD8F9C_gshared (List_1_t77B94703E05C519A9010DD0614F757F974E1CD8B* __this, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<UnityEngine.Vector3>::Add(T)
@@ -2377,16 +2369,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool List_1_Remove_m4DFA48F4CEB9169601E75FC28
 // T UnityEngine.Object::Instantiate<System.Object>(T)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Object_Instantiate_TisRuntimeObject_m90A1E6C4C2B445D2E848DB75C772D1B95AAC046A_gshared (RuntimeObject* ___0_original, const RuntimeMethod* method) ;
 
-// System.String UnityEngine.Component::get_tag()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Component_get_tag_m7561A81116CAB82B8A459E934662BFC2039FB7EF (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
-// System.Boolean System.String::op_Equality(System.String,System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1 (String_t* ___0_a, String_t* ___1_b, const RuntimeMethod* method) ;
-// UnityEngine.GameObject UnityEngine.Component::get_gameObject()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Object::Destroy(UnityEngine.Object)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___0_obj, const RuntimeMethod* method) ;
-// System.Void UnityEngine.MonoBehaviour::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, const RuntimeMethod* method) ;
 // System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<AnimationPlayer>::GetEnumerator()
 inline Enumerator_tF83FD8B1FE81840AE7B300E306A527D3C951FD09 List_1_GetEnumerator_mB6335C67AE270B70C8552464DD5A6D21683BDC0E (List_1_t9A19070EBF0DC5BFAE019535DB8DED0A575075CB* __this, const RuntimeMethod* method)
 {
@@ -2409,6 +2391,8 @@ inline bool Enumerator_MoveNext_m3CF037D6C68BB452D2DD1A3314F593F67A747613 (Enume
 {
 	return ((  bool (*) (Enumerator_tF83FD8B1FE81840AE7B300E306A527D3C951FD09*, const RuntimeMethod*))Enumerator_MoveNext_mE921CC8F29FBBDE7CC3209A0ED0D921D58D00BCB_gshared)(__this, method);
 }
+// System.Void UnityEngine.MonoBehaviour::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, const RuntimeMethod* method) ;
 // UnityEngine.GameObject UnityEngine.GameObject::FindGameObjectWithTag(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* GameObject_FindGameObjectWithTag_mF0229BC2074CE9EEA72FAB1E5A4BC2AEC3D2CDBE (String_t* ___0_tag, const RuntimeMethod* method) ;
 // T UnityEngine.GameObject::GetComponent<AnimationManager>()
@@ -2458,6 +2442,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF87
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CSelfDestroyU3Ed__2__ctor_m66DD783FA3C85AA1507DB2B6C103D7D4D5D337F2 (U3CSelfDestroyU3Ed__2_t6181896B8D27933C2BFF3EDFBF4C335FA27724B1* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
 // System.Void UnityEngine.WaitForSeconds::.ctor(System.Single)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WaitForSeconds__ctor_m579F95BADEDBAB4B3A7E302C6EE3995926EF2EFC (WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3* __this, float ___0_seconds, const RuntimeMethod* method) ;
+// UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
+// System.Void UnityEngine.Object::Destroy(UnityEngine.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___0_obj, const RuntimeMethod* method) ;
 // System.Void System.NotSupportedException::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* __this, const RuntimeMethod* method) ;
 // System.Void SpriteSequence/<AnimationCoroutine>d__3::.ctor(System.Int32)
@@ -2492,10 +2480,6 @@ inline void Enumerator_Dispose_m7D8098C50EE0CF157C6B09912310A1FD9474F245 (Enumer
 }
 // System.Void Ball::set_BallId(System.Int32)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Ball_set_BallId_mE4300DCA9358CED68B944C904CABB491B3D79D79_inline (Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* __this, int32_t ___0_value, const RuntimeMethod* method) ;
-// System.Int32 Ball::get_BallId()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Ball_get_BallId_m51170AE7006D3F7CFFFD45BB4844C3995905701C_inline (Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Debug::Log(System.Object)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB (RuntimeObject* ___0_message, const RuntimeMethod* method) ;
 // T UnityEngine.Component::GetComponent<UnityEngine.MeshRenderer>()
 inline MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* Component_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m0EDA0079FA3617687C4A28623B79A37D618D9CFB (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method)
 {
@@ -2515,6 +2499,10 @@ inline Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* List_1_get_Item_m70F5
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Renderer_set_material_m21E88977071E0A914D62F3D9CFF0193B3117C45A (Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF* __this, Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___0_value, const RuntimeMethod* method) ;
 // System.Void Ball/<SelfDestroyCoroutine>d__12::.ctor(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CSelfDestroyCoroutineU3Ed__12__ctor_mE70AA3712A6F9348083B125F364945E30ADB29BA (U3CSelfDestroyCoroutineU3Ed__12_t9B6A18D250CEFFD7B7D9B9EB7C0F357553B0D9CC* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
+// System.String UnityEngine.Component::get_tag()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Component_get_tag_m7561A81116CAB82B8A459E934662BFC2039FB7EF (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
+// System.Boolean System.String::op_Equality(System.String,System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1 (String_t* ___0_a, String_t* ___1_b, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::Clear()
 inline void List_1_Clear_m32D399BDD753B5BD6CE27560249096418F3F0867_inline (List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* __this, const RuntimeMethod* method)
 {
@@ -2524,22 +2512,21 @@ inline void List_1_Clear_m32D399BDD753B5BD6CE27560249096418F3F0867_inline (List_
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Ball_get_Count_mDD378668E361ECA9B17081D2704DA670D25E1BAE_inline (Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* __this, const RuntimeMethod* method) ;
 // System.Void Ball::set_Count(System.Int32)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Ball_set_Count_m5581474122ACD4F60C716F3AA5077F927B28C377_inline (Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* __this, int32_t ___0_value, const RuntimeMethod* method) ;
-// System.Boolean System.Collections.Generic.List`1<Ball>::Contains(T)
-inline bool List_1_Contains_mAD0C0A7DC4EE571055114FF67F91988AC200C4A5 (List_1_t6F8B167DABA1E067E8E93E624709CAF42B91966B* __this, Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* ___0_item, const RuntimeMethod* method)
-{
-	return ((  bool (*) (List_1_t6F8B167DABA1E067E8E93E624709CAF42B91966B*, Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B*, const RuntimeMethod*))List_1_Contains_m4C9139C2A6B23E9343D3F87807B32C6E2CFE660D_gshared)(__this, ___0_item, method);
-}
-// System.Collections.IEnumerator BezierPathController::DelayedCheckEqualBalls(Ball,System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* BezierPathController_DelayedCheckEqualBalls_m93792BED9F99B8717F807922A778E02AE3831859 (BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* __this, Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* ___0_insertedBall, float ___1_delayTime, const RuntimeMethod* method) ;
 // System.Void BezierPathController::DestroyBall(Ball,System.Single)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BezierPathController_DestroyBall_m01AB0653E1DED7107A2246EBBAACE4371E430F75 (BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* __this, Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* ___0_ball, float ___1_delay, const RuntimeMethod* method) ;
-// T UnityEngine.Component::GetComponent<AnimationPlayer>()
-inline AnimationPlayer_t35623DE7A682BE69516DD61178200DC230B0F4D1* Component_GetComponent_TisAnimationPlayer_t35623DE7A682BE69516DD61178200DC230B0F4D1_m71AEC8FD359BA7B5A00E4864AA6587BD5334C6AA (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method)
-{
-	return ((  AnimationPlayer_t35623DE7A682BE69516DD61178200DC230B0F4D1* (*) (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3*, const RuntimeMethod*))Component_GetComponent_TisRuntimeObject_m7181F81CAEC2CF53F5D2BC79B7425C16E1F80D33_gshared)(__this, method);
-}
+// System.Collections.IEnumerator BezierPathController::DelayedCheckEqualBalls(Ball,System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* BezierPathController_DelayedCheckEqualBalls_m93792BED9F99B8717F807922A778E02AE3831859 (BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* __this, Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* ___0_insertedBall, float ___1_delayTime, const RuntimeMethod* method) ;
 // System.String UnityEngine.GameObject::get_tag()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* GameObject_get_tag_mEDD27BF795072834D656B286CBE51B2C99747805 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method) ;
+// T UnityEngine.GameObject::GetComponent<Ball>()
+inline Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* GameObject_GetComponent_TisBall_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B_m3B8899FF603AF85B6996E02615809B9E3FC71D19 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method)
+{
+	return ((  Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, const RuntimeMethod*))GameObject_GetComponent_TisRuntimeObject_m6EAED4AA356F0F48288F67899E5958792395563B_gshared)(__this, method);
+}
+// System.Int32 Ball::get_BallId()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Ball_get_BallId_m51170AE7006D3F7CFFFD45BB4844C3995905701C_inline (Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* __this, const RuntimeMethod* method) ;
+// System.Void UnityEngine.Debug::Log(System.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB (RuntimeObject* ___0_message, const RuntimeMethod* method) ;
 // System.Void Ball/<ShootCoroutine>d__14::.ctor(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CShootCoroutineU3Ed__14__ctor_m5AE9F2B3F833685C9224D925D659E782D3F1A994 (U3CShootCoroutineU3Ed__14_t5E2D95D67BC6F752B79D275B66E1B526BA02142D* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
 // System.Collections.IEnumerator Ball::ShootCoroutine(UnityEngine.Vector3,System.Single)
@@ -2586,11 +2573,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E
 inline GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Object_Instantiate_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m831D2F71DF2AA6C93AFDFEFA04CF2CFC5FBBCDB4 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_original, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_position, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___2_rotation, const RuntimeMethod* method)
 {
 	return ((  GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974, const RuntimeMethod*))Object_Instantiate_TisRuntimeObject_m249A6BA4F2F19C2D3CE217D4D31847DF0EF03EFE_gshared)(___0_original, ___1_position, ___2_rotation, method);
-}
-// T UnityEngine.GameObject::GetComponent<Ball>()
-inline Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* GameObject_GetComponent_TisBall_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B_m3B8899FF603AF85B6996E02615809B9E3FC71D19 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method)
-{
-	return ((  Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, const RuntimeMethod*))GameObject_GetComponent_TisRuntimeObject_m6EAED4AA356F0F48288F67899E5958792395563B_gshared)(__this, method);
 }
 // System.Void Ball::SetBallId(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Ball_SetBallId_m63533FB653A2BC55FEE27A9FDAC5016CA19D12D0 (Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* __this, int32_t ___0_id, const RuntimeMethod* method) ;
@@ -2653,11 +2635,15 @@ inline Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 List_1_get_Item_m8F2E15
 {
 	return ((  Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 (*) (List_1_t77B94703E05C519A9010DD0614F757F974E1CD8B*, int32_t, const RuntimeMethod*))List_1_get_Item_m8F2E15FC96DA75186C51228128A0660709E4E810_gshared)(__this, ___0_index, method);
 }
+// System.Void BallsFactory::NewRandomNumber()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallsFactory_NewRandomNumber_m5E0742C7C54DBAF91D0FA3A1E8109D5F2A29D825 (BallsFactory_tA3C187366ABF98F549BF792903FAB8B308904E80* __this, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<Ball>::Add(T)
 inline void List_1_Add_m26129A5D541D94F2BF4B61AD39F9B9D18E55DFE1_inline (List_1_t6F8B167DABA1E067E8E93E624709CAF42B91966B* __this, Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* ___0_item, const RuntimeMethod* method)
 {
 	((  void (*) (List_1_t6F8B167DABA1E067E8E93E624709CAF42B91966B*, Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B*, const RuntimeMethod*))List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline)(__this, ___0_item, method);
 }
+// System.Int32 UnityEngine.Random::Range(System.Int32,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Random_Range_m6763D9767F033357F88B6637F048F4ACA4123B68 (int32_t ___0_minInclusive, int32_t ___1_maxExclusive, const RuntimeMethod* method) ;
 // System.Collections.IEnumerator BezierPathController::DelayedDecreaseSpeed(System.Single,System.Single)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* BezierPathController_DelayedDecreaseSpeed_m92DFBDB443356ACE1E6EEC47F4F2957B3937CE79 (BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* __this, float ___0_delay, float ___1_newSpeed, const RuntimeMethod* method) ;
 // System.Collections.IEnumerator BallsFactory::Factory()
@@ -2693,6 +2679,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCheckWinCoroutineU3Ed__5__ctor_mB194E
 inline Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* Component_GetComponent_TisBall_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B_m53E000D78EBA352E7EDA882E93BB7FF35EEC651F (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method)
 {
 	return ((  Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* (*) (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3*, const RuntimeMethod*))Component_GetComponent_TisRuntimeObject_m7181F81CAEC2CF53F5D2BC79B7425C16E1F80D33_gshared)(__this, method);
+}
+// System.Boolean System.Collections.Generic.List`1<Ball>::Contains(T)
+inline bool List_1_Contains_mAD0C0A7DC4EE571055114FF67F91988AC200C4A5 (List_1_t6F8B167DABA1E067E8E93E624709CAF42B91966B* __this, Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* ___0_item, const RuntimeMethod* method)
+{
+	return ((  bool (*) (List_1_t6F8B167DABA1E067E8E93E624709CAF42B91966B*, Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B*, const RuntimeMethod*))List_1_Contains_m4C9139C2A6B23E9343D3F87807B32C6E2CFE660D_gshared)(__this, ___0_item, method);
 }
 // System.Void BezierPathController::StopSequence()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BezierPathController_StopSequence_m54269D35E86010A547C8FEF75D132FB67A721AFB (BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* __this, const RuntimeMethod* method) ;
@@ -2769,6 +2760,11 @@ inline Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* Enumerator_get_Current_m8
 inline bool Enumerator_MoveNext_mC35BD46DAAD80F1D743A3F4D6664C95B10AED8FC (Enumerator_tBFCDD8C5704725F4AE4AB2AC9E31C21098EED75C* __this, const RuntimeMethod* method)
 {
 	return ((  bool (*) (Enumerator_tBFCDD8C5704725F4AE4AB2AC9E31C21098EED75C*, const RuntimeMethod*))Enumerator_MoveNext_mE921CC8F29FBBDE7CC3209A0ED0D921D58D00BCB_gshared)(__this, method);
+}
+// T UnityEngine.Component::GetComponent<AnimationPlayer>()
+inline AnimationPlayer_t35623DE7A682BE69516DD61178200DC230B0F4D1* Component_GetComponent_TisAnimationPlayer_t35623DE7A682BE69516DD61178200DC230B0F4D1_m71AEC8FD359BA7B5A00E4864AA6587BD5334C6AA (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method)
+{
+	return ((  AnimationPlayer_t35623DE7A682BE69516DD61178200DC230B0F4D1* (*) (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3*, const RuntimeMethod*))Component_GetComponent_TisRuntimeObject_m7181F81CAEC2CF53F5D2BC79B7425C16E1F80D33_gshared)(__this, method);
 }
 // System.Collections.IEnumerator BezierPathController::DestroyBallCoroutine(Ball,System.Single)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* BezierPathController_DestroyBallCoroutine_mEAE5300823783749C1AC8F60C2F922847CB9E7B9 (BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* __this, Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* ___0_ball, float ___1_delay, const RuntimeMethod* method) ;
@@ -2993,61 +2989,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void Arrow::OnTriggerEnter(UnityEngine.Collider)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Arrow_OnTriggerEnter_m8DDE09FC6D736D718F5D06F444367DB41B147514 (Arrow_t7048A6830A9F76E0448BBD44FD9C3C00BC138DBF* __this, Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* ___0_other, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralAF4FE737DB07A38DC7B9A34B4BA555906EC0EFA9);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// if(other.tag == "Ball")
-		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_0 = ___0_other;
-		NullCheck(L_0);
-		String_t* L_1;
-		L_1 = Component_get_tag_m7561A81116CAB82B8A459E934662BFC2039FB7EF(L_0, NULL);
-		bool L_2;
-		L_2 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_1, _stringLiteralAF4FE737DB07A38DC7B9A34B4BA555906EC0EFA9, NULL);
-		if (!L_2)
-		{
-			goto IL_001d;
-		}
-	}
-	{
-		// Destroy(other.gameObject);
-		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_3 = ___0_other;
-		NullCheck(L_3);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4;
-		L_4 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_3, NULL);
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_4, NULL);
-	}
-
-IL_001d:
-	{
-		// }
-		return;
-	}
-}
-// System.Void Arrow::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Arrow__ctor_m94A543A34B422016042ADD49083D7261EB6B2F80 (Arrow_t7048A6830A9F76E0448BBD44FD9C3C00BC138DBF* __this, const RuntimeMethod* method) 
-{
-	{
-		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
-		return;
-	}
-}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -3982,9 +3923,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Ball_SetBallId_m63533FB653A2BC55FEE27A9F
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Component_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m0EDA0079FA3617687C4A28623B79A37D618D9CFB_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_GetComponent_TisBallsFactory_tA3C187366ABF98F549BF792903FAB8B308904E80_mA2994A87D9ADD96587FD0CD65FA6EFDBE11A9AE5_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Item_m70F5CFC2DEA9332B78C5ADC0EE1CE1B7465B1456_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral50C08DEB1B54D15F60D3F3BB5B810620CE358F0A);
 		s_Il2CppMethodInitialized = true;
@@ -3997,55 +3936,48 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Ball_SetBallId_m63533FB653A2BC55FEE27A9F
 		// BallId = id;
 		int32_t L_0 = ___0_id;
 		Ball_set_BallId_mE4300DCA9358CED68B944C904CABB491B3D79D79_inline(__this, L_0, NULL);
-		// Debug.Log(BallId);
-		int32_t L_1;
-		L_1 = Ball_get_BallId_m51170AE7006D3F7CFFFD45BB4844C3995905701C_inline(__this, NULL);
-		int32_t L_2 = L_1;
-		RuntimeObject* L_3 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_2);
-		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_3, NULL);
 		// GetComponent<MeshRenderer>().material = (id == -1) ? GameObject.FindGameObjectWithTag("BallsFactory").GetComponent<BallsFactory>().BonusMaterial : GameObject.FindGameObjectWithTag("BallsFactory").GetComponent<BallsFactory>().AvailableMaterials[id];
-		MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* L_4;
-		L_4 = Component_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m0EDA0079FA3617687C4A28623B79A37D618D9CFB(__this, Component_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m0EDA0079FA3617687C4A28623B79A37D618D9CFB_RuntimeMethod_var);
-		int32_t L_5 = ___0_id;
-		G_B1_0 = L_4;
-		if ((((int32_t)L_5) == ((int32_t)(-1))))
+		MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* L_1;
+		L_1 = Component_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m0EDA0079FA3617687C4A28623B79A37D618D9CFB(__this, Component_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m0EDA0079FA3617687C4A28623B79A37D618D9CFB_RuntimeMethod_var);
+		int32_t L_2 = ___0_id;
+		G_B1_0 = L_1;
+		if ((((int32_t)L_2) == ((int32_t)(-1))))
 		{
-			G_B2_0 = L_4;
-			goto IL_003d;
+			G_B2_0 = L_1;
+			goto IL_002d;
 		}
 	}
 	{
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6;
-		L_6 = GameObject_FindGameObjectWithTag_mF0229BC2074CE9EEA72FAB1E5A4BC2AEC3D2CDBE(_stringLiteral50C08DEB1B54D15F60D3F3BB5B810620CE358F0A, NULL);
-		NullCheck(L_6);
-		BallsFactory_tA3C187366ABF98F549BF792903FAB8B308904E80* L_7;
-		L_7 = GameObject_GetComponent_TisBallsFactory_tA3C187366ABF98F549BF792903FAB8B308904E80_mA2994A87D9ADD96587FD0CD65FA6EFDBE11A9AE5(L_6, GameObject_GetComponent_TisBallsFactory_tA3C187366ABF98F549BF792903FAB8B308904E80_mA2994A87D9ADD96587FD0CD65FA6EFDBE11A9AE5_RuntimeMethod_var);
-		NullCheck(L_7);
-		List_1_t386E09F4F22DDE4D2AC41A8567FFF283C254537B* L_8 = L_7->___AvailableMaterials_15;
-		int32_t L_9 = ___0_id;
-		NullCheck(L_8);
-		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_10;
-		L_10 = List_1_get_Item_m70F5CFC2DEA9332B78C5ADC0EE1CE1B7465B1456(L_8, L_9, List_1_get_Item_m70F5CFC2DEA9332B78C5ADC0EE1CE1B7465B1456_RuntimeMethod_var);
-		G_B3_0 = L_10;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3;
+		L_3 = GameObject_FindGameObjectWithTag_mF0229BC2074CE9EEA72FAB1E5A4BC2AEC3D2CDBE(_stringLiteral50C08DEB1B54D15F60D3F3BB5B810620CE358F0A, NULL);
+		NullCheck(L_3);
+		BallsFactory_tA3C187366ABF98F549BF792903FAB8B308904E80* L_4;
+		L_4 = GameObject_GetComponent_TisBallsFactory_tA3C187366ABF98F549BF792903FAB8B308904E80_mA2994A87D9ADD96587FD0CD65FA6EFDBE11A9AE5(L_3, GameObject_GetComponent_TisBallsFactory_tA3C187366ABF98F549BF792903FAB8B308904E80_mA2994A87D9ADD96587FD0CD65FA6EFDBE11A9AE5_RuntimeMethod_var);
+		NullCheck(L_4);
+		List_1_t386E09F4F22DDE4D2AC41A8567FFF283C254537B* L_5 = L_4->___AvailableMaterials_15;
+		int32_t L_6 = ___0_id;
+		NullCheck(L_5);
+		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_7;
+		L_7 = List_1_get_Item_m70F5CFC2DEA9332B78C5ADC0EE1CE1B7465B1456(L_5, L_6, List_1_get_Item_m70F5CFC2DEA9332B78C5ADC0EE1CE1B7465B1456_RuntimeMethod_var);
+		G_B3_0 = L_7;
 		G_B3_1 = G_B1_0;
-		goto IL_0051;
+		goto IL_0041;
 	}
 
-IL_003d:
+IL_002d:
 	{
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11;
-		L_11 = GameObject_FindGameObjectWithTag_mF0229BC2074CE9EEA72FAB1E5A4BC2AEC3D2CDBE(_stringLiteral50C08DEB1B54D15F60D3F3BB5B810620CE358F0A, NULL);
-		NullCheck(L_11);
-		BallsFactory_tA3C187366ABF98F549BF792903FAB8B308904E80* L_12;
-		L_12 = GameObject_GetComponent_TisBallsFactory_tA3C187366ABF98F549BF792903FAB8B308904E80_mA2994A87D9ADD96587FD0CD65FA6EFDBE11A9AE5(L_11, GameObject_GetComponent_TisBallsFactory_tA3C187366ABF98F549BF792903FAB8B308904E80_mA2994A87D9ADD96587FD0CD65FA6EFDBE11A9AE5_RuntimeMethod_var);
-		NullCheck(L_12);
-		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_13 = L_12->___BonusMaterial_16;
-		G_B3_0 = L_13;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_8;
+		L_8 = GameObject_FindGameObjectWithTag_mF0229BC2074CE9EEA72FAB1E5A4BC2AEC3D2CDBE(_stringLiteral50C08DEB1B54D15F60D3F3BB5B810620CE358F0A, NULL);
+		NullCheck(L_8);
+		BallsFactory_tA3C187366ABF98F549BF792903FAB8B308904E80* L_9;
+		L_9 = GameObject_GetComponent_TisBallsFactory_tA3C187366ABF98F549BF792903FAB8B308904E80_mA2994A87D9ADD96587FD0CD65FA6EFDBE11A9AE5(L_8, GameObject_GetComponent_TisBallsFactory_tA3C187366ABF98F549BF792903FAB8B308904E80_mA2994A87D9ADD96587FD0CD65FA6EFDBE11A9AE5_RuntimeMethod_var);
+		NullCheck(L_9);
+		Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* L_10 = L_9->___BonusMaterial_16;
+		G_B3_0 = L_10;
 		G_B3_1 = G_B2_0;
 	}
 
-IL_0051:
+IL_0041:
 	{
 		NullCheck(G_B3_1);
 		Renderer_set_material_m21E88977071E0A914D62F3D9CFF0193B3117C45A(G_B3_1, G_B3_0, NULL);
@@ -4083,13 +4015,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Ball_OnTriggerEnter_m04A16021C89C3514A16
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Component_GetComponent_TisAnimationPlayer_t35623DE7A682BE69516DD61178200DC230B0F4D1_m71AEC8FD359BA7B5A00E4864AA6587BD5334C6AA_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_GetComponent_TisBall_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B_m3B8899FF603AF85B6996E02615809B9E3FC71D19_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_Clear_m32D399BDD753B5BD6CE27560249096418F3F0867_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_Contains_mAD0C0A7DC4EE571055114FF67F91988AC200C4A5_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ObjectPoolManager_t4DC47DD30483C25AB58194A01395A87E99F98B93_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral40F5431A5203B1B661E92C45EF446F7D326E2C50);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB6E875256732E36B6894A0DF3A01DE33CDFEFE45);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral9CEB4D81FE1382FF120AEE05E403D6F7BCE690D2);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralAF4FE737DB07A38DC7B9A34B4BA555906EC0EFA9);
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
@@ -4103,7 +4036,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Ball_OnTriggerEnter_m04A16021C89C3514A16
 		L_2 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_1, _stringLiteral40F5431A5203B1B661E92C45EF446F7D326E2C50, NULL);
 		if (!L_2)
 		{
-			goto IL_008f;
+			goto IL_007c;
 		}
 	}
 	{
@@ -4131,88 +4064,91 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Ball_OnTriggerEnter_m04A16021C89C3514A16
 		L_9 = Ball_get_Count_mDD378668E361ECA9B17081D2704DA670D25E1BAE_inline(__this, NULL);
 		if ((((int32_t)L_9) > ((int32_t)0)))
 		{
-			goto IL_008f;
+			goto IL_007c;
 		}
 	}
-	{
-		// if (PathController.BallSequence.Contains(this))
-		BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* L_10 = __this->___PathController_6;
-		NullCheck(L_10);
-		List_1_t6F8B167DABA1E067E8E93E624709CAF42B91966B* L_11 = L_10->___BallSequence_6;
-		NullCheck(L_11);
-		bool L_12;
-		L_12 = List_1_Contains_mAD0C0A7DC4EE571055114FF67F91988AC200C4A5(L_11, __this, List_1_Contains_mAD0C0A7DC4EE571055114FF67F91988AC200C4A5_RuntimeMethod_var);
-		if (!L_12)
-		{
-			goto IL_0075;
-		}
-	}
-	{
-		// PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this,0f));
-		BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* L_13 = __this->___PathController_6;
-		BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* L_14 = __this->___PathController_6;
-		NullCheck(L_14);
-		RuntimeObject* L_15;
-		L_15 = BezierPathController_DelayedCheckEqualBalls_m93792BED9F99B8717F807922A778E02AE3831859(L_14, __this, (0.0f), NULL);
-		NullCheck(L_13);
-		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_16;
-		L_16 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(L_13, L_15, NULL);
-	}
-
-IL_0075:
 	{
 		// if (Count <= 0)
-		int32_t L_17;
-		L_17 = Ball_get_Count_mDD378668E361ECA9B17081D2704DA670D25E1BAE_inline(__this, NULL);
-		if ((((int32_t)L_17) > ((int32_t)0)))
+		int32_t L_10;
+		L_10 = Ball_get_Count_mDD378668E361ECA9B17081D2704DA670D25E1BAE_inline(__this, NULL);
+		if ((((int32_t)L_10) > ((int32_t)0)))
 		{
-			goto IL_008f;
+			goto IL_007c;
 		}
 	}
 	{
 		// PathController.DestroyBall(this);
-		BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* L_18 = __this->___PathController_6;
-		NullCheck(L_18);
-		BezierPathController_DestroyBall_m01AB0653E1DED7107A2246EBBAACE4371E430F75(L_18, __this, (0.0f), NULL);
+		BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* L_11 = __this->___PathController_6;
+		NullCheck(L_11);
+		BezierPathController_DestroyBall_m01AB0653E1DED7107A2246EBBAACE4371E430F75(L_11, __this, (0.0f), NULL);
+		// PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this, 0f));
+		BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* L_12 = __this->___PathController_6;
+		BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* L_13 = __this->___PathController_6;
+		NullCheck(L_13);
+		RuntimeObject* L_14;
+		L_14 = BezierPathController_DelayedCheckEqualBalls_m93792BED9F99B8717F807922A778E02AE3831859(L_13, __this, (0.0f), NULL);
+		NullCheck(L_12);
+		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_15;
+		L_15 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(L_12, L_14, NULL);
 	}
 
-IL_008f:
+IL_007c:
 	{
-		// GetComponent<AnimationPlayer>().Play(AnimationThrowType.OnCollide);
-		AnimationPlayer_t35623DE7A682BE69516DD61178200DC230B0F4D1* L_19;
-		L_19 = Component_GetComponent_TisAnimationPlayer_t35623DE7A682BE69516DD61178200DC230B0F4D1_m71AEC8FD359BA7B5A00E4864AA6587BD5334C6AA(__this, Component_GetComponent_TisAnimationPlayer_t35623DE7A682BE69516DD61178200DC230B0F4D1_m71AEC8FD359BA7B5A00E4864AA6587BD5334C6AA_RuntimeMethod_var);
-		NullCheck(L_19);
-		AnimationPlayer_Play_mB5C7E5BEC48B49E755B82FCAC0BAC7ECB63B52B6(L_19, 6, NULL);
-		// if (PathController.BallSequence.Contains(this)) return;
-		BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* L_20 = __this->___PathController_6;
-		NullCheck(L_20);
-		List_1_t6F8B167DABA1E067E8E93E624709CAF42B91966B* L_21 = L_20->___BallSequence_6;
-		NullCheck(L_21);
-		bool L_22;
-		L_22 = List_1_Contains_mAD0C0A7DC4EE571055114FF67F91988AC200C4A5(L_21, __this, List_1_Contains_mAD0C0A7DC4EE571055114FF67F91988AC200C4A5_RuntimeMethod_var);
-		if (!L_22)
+		// if (other.gameObject.tag == "Ball" && other.gameObject.GetComponent<Ball>().BallId == BallId)
+		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_16 = ___0_other;
+		NullCheck(L_16);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_17;
+		L_17 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_16, NULL);
+		NullCheck(L_17);
+		String_t* L_18;
+		L_18 = GameObject_get_tag_mEDD27BF795072834D656B286CBE51B2C99747805(L_17, NULL);
+		bool L_19;
+		L_19 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_18, _stringLiteralAF4FE737DB07A38DC7B9A34B4BA555906EC0EFA9, NULL);
+		if (!L_19)
 		{
-			goto IL_00af;
+			goto IL_00e3;
 		}
 	}
 	{
-		// if (PathController.BallSequence.Contains(this)) return;
-		return;
+		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_20 = ___0_other;
+		NullCheck(L_20);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_21;
+		L_21 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_20, NULL);
+		NullCheck(L_21);
+		Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* L_22;
+		L_22 = GameObject_GetComponent_TisBall_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B_m3B8899FF603AF85B6996E02615809B9E3FC71D19(L_21, GameObject_GetComponent_TisBall_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B_m3B8899FF603AF85B6996E02615809B9E3FC71D19_RuntimeMethod_var);
+		NullCheck(L_22);
+		int32_t L_23;
+		L_23 = Ball_get_BallId_m51170AE7006D3F7CFFFD45BB4844C3995905701C_inline(L_22, NULL);
+		int32_t L_24;
+		L_24 = Ball_get_BallId_m51170AE7006D3F7CFFFD45BB4844C3995905701C_inline(__this, NULL);
+		if ((!(((uint32_t)L_23) == ((uint32_t)L_24))))
+		{
+			goto IL_00e3;
+		}
+	}
+	{
+		// Debug.Log("hit");
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral9CEB4D81FE1382FF120AEE05E403D6F7BCE690D2, NULL);
+		// PathController.DestroyBall(this);
+		BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* L_25 = __this->___PathController_6;
+		NullCheck(L_25);
+		BezierPathController_DestroyBall_m01AB0653E1DED7107A2246EBBAACE4371E430F75(L_25, __this, (0.0f), NULL);
+		// PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this, 0f));
+		BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* L_26 = __this->___PathController_6;
+		BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* L_27 = __this->___PathController_6;
+		NullCheck(L_27);
+		RuntimeObject* L_28;
+		L_28 = BezierPathController_DelayedCheckEqualBalls_m93792BED9F99B8717F807922A778E02AE3831859(L_27, __this, (0.0f), NULL);
+		NullCheck(L_26);
+		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_29;
+		L_29 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(L_26, L_28, NULL);
 	}
 
-IL_00af:
+IL_00e3:
 	{
-		// if (other.gameObject.tag == "BallsTrap") return;
-		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_23 = ___0_other;
-		NullCheck(L_23);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_24;
-		L_24 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_23, NULL);
-		NullCheck(L_24);
-		String_t* L_25;
-		L_25 = GameObject_get_tag_mEDD27BF795072834D656B286CBE51B2C99747805(L_24, NULL);
-		bool L_26;
-		L_26 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_25, _stringLiteralB6E875256732E36B6894A0DF3A01DE33CDFEFE45, NULL);
-		// if (other.gameObject.tag == "BallsTrap") return;
+		// }
 		return;
 	}
 }
@@ -5352,13 +5288,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallsFactory_GenerateNewBall_m60B7C1AA1A
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
-	int32_t V_0 = 0;
-	Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* V_1 = NULL;
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* G_B2_0 = NULL;
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* G_B1_0 = NULL;
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* G_B5_0 = NULL;
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* G_B4_0 = NULL;
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* G_B3_0 = NULL;
+	Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* V_0 = NULL;
 	{
 		// var ball = (GameObject)Instantiate(BallPrefab, transform.position, Quaternion.identity);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___BallPrefab_4;
@@ -5401,100 +5331,151 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallsFactory_GenerateNewBall_m60B7C1AA1A
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_14 = __this->___AudioSource_6;
 		NullCheck(L_14);
 		AudioSource_Play_m95DF07111C61D0E0F00257A00384D31531D590C3(L_14, NULL);
-		// var nextId = 0;
-		V_0 = 0;
-		// if (_prevId == -3)
-		int32_t L_15 = __this->____prevId_19;
-		G_B1_0 = L_9;
-		if ((!(((uint32_t)L_15) == ((uint32_t)((int32_t)-3)))))
-		{
-			G_B2_0 = L_9;
-			goto IL_0074;
-		}
-	}
-	{
-		// nextId = GetNextId();
-		int32_t L_16;
-		L_16 = BallsFactory_GetNextId_m0EFC130009AB55766F6697CB5B67822EC90E403C(__this, NULL);
-		V_0 = L_16;
-		// _prevId = nextId;
-		int32_t L_17 = V_0;
-		__this->____prevId_19 = L_17;
-		G_B5_0 = G_B1_0;
-		goto IL_009e;
-	}
-
-IL_0074:
-	{
-		// if (_random.NextDouble() <= ProbabilityColorChange)
-		Random_t79716069EDE67D1D7734F60AE402D0CA3FB6B4C8* L_18 = __this->____random_18;
-		NullCheck(L_18);
-		double L_19;
-		L_19 = VirtualFuncInvoker0< double >::Invoke(8 /* System.Double System.Random::NextDouble() */, L_18);
-		double L_20 = __this->___ProbabilityColorChange_13;
-		G_B3_0 = G_B2_0;
-		if ((!(((double)L_19) <= ((double)L_20))))
-		{
-			G_B4_0 = G_B2_0;
-			goto IL_0097;
-		}
-	}
-	{
-		// nextId = GetNextId();
-		int32_t L_21;
-		L_21 = BallsFactory_GetNextId_m0EFC130009AB55766F6697CB5B67822EC90E403C(__this, NULL);
-		V_0 = L_21;
-		// _prevId = nextId;
-		int32_t L_22 = V_0;
-		__this->____prevId_19 = L_22;
-		G_B5_0 = G_B3_0;
-		goto IL_009e;
-	}
-
-IL_0097:
-	{
-		// nextId = _prevId;
-		int32_t L_23 = __this->____prevId_19;
-		V_0 = L_23;
-		G_B5_0 = G_B4_0;
-	}
-
-IL_009e:
-	{
+		// NewRandomNumber();
+		BallsFactory_NewRandomNumber_m5E0742C7C54DBAF91D0FA3A1E8109D5F2A29D825(__this, NULL);
 		// Ball ballComponent = ball.GetComponent<Ball>();
-		NullCheck(G_B5_0);
-		Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* L_24;
-		L_24 = GameObject_GetComponent_TisBall_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B_m3B8899FF603AF85B6996E02615809B9E3FC71D19(G_B5_0, GameObject_GetComponent_TisBall_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B_m3B8899FF603AF85B6996E02615809B9E3FC71D19_RuntimeMethod_var);
-		V_1 = L_24;
-		// ballComponent.SetBallId(nextId);
-		Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* L_25 = V_1;
-		int32_t L_26 = V_0;
-		NullCheck(L_25);
-		Ball_SetBallId_m63533FB653A2BC55FEE27A9FDAC5016CA19D12D0(L_25, L_26, NULL);
+		NullCheck(L_9);
+		Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* L_15;
+		L_15 = GameObject_GetComponent_TisBall_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B_m3B8899FF603AF85B6996E02615809B9E3FC71D19(L_9, GameObject_GetComponent_TisBall_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B_m3B8899FF603AF85B6996E02615809B9E3FC71D19_RuntimeMethod_var);
+		V_0 = L_15;
+		// ballComponent.SetBallId(lastNumber);
+		Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* L_16 = V_0;
+		int32_t L_17 = __this->___lastNumber_22;
+		NullCheck(L_16);
+		Ball_SetBallId_m63533FB653A2BC55FEE27A9FDAC5016CA19D12D0(L_16, L_17, NULL);
 		// ballComponent.NextNode = PathController.PathNodes[0];
-		Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* L_27 = V_1;
-		BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* L_28 = __this->___PathController_5;
-		NullCheck(L_28);
-		List_1_t77B94703E05C519A9010DD0614F757F974E1CD8B* L_29;
-		L_29 = BezierPathController_get_PathNodes_m8152553A82A220A2E28DD636EF5788C7502622B8_inline(L_28, NULL);
-		NullCheck(L_29);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_30;
-		L_30 = List_1_get_Item_m8F2E15FC96DA75186C51228128A0660709E4E810(L_29, 0, List_1_get_Item_m8F2E15FC96DA75186C51228128A0660709E4E810_RuntimeMethod_var);
-		NullCheck(L_27);
-		L_27->___NextNode_4 = L_30;
+		Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* L_18 = V_0;
+		BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* L_19 = __this->___PathController_5;
+		NullCheck(L_19);
+		List_1_t77B94703E05C519A9010DD0614F757F974E1CD8B* L_20;
+		L_20 = BezierPathController_get_PathNodes_m8152553A82A220A2E28DD636EF5788C7502622B8_inline(L_19, NULL);
+		NullCheck(L_20);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_21;
+		L_21 = List_1_get_Item_m8F2E15FC96DA75186C51228128A0660709E4E810(L_20, 0, List_1_get_Item_m8F2E15FC96DA75186C51228128A0660709E4E810_RuntimeMethod_var);
+		NullCheck(L_18);
+		L_18->___NextNode_4 = L_21;
 		// ballComponent.PathController = PathController;
-		Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* L_31 = V_1;
-		BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* L_32 = __this->___PathController_5;
-		NullCheck(L_31);
-		L_31->___PathController_6 = L_32;
-		Il2CppCodeGenWriteBarrier((void**)(&L_31->___PathController_6), (void*)L_32);
+		Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* L_22 = V_0;
+		BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* L_23 = __this->___PathController_5;
+		NullCheck(L_22);
+		L_22->___PathController_6 = L_23;
+		Il2CppCodeGenWriteBarrier((void**)(&L_22->___PathController_6), (void*)L_23);
 		// PathController.BallSequence.Add(ballComponent);
-		BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* L_33 = __this->___PathController_5;
-		NullCheck(L_33);
-		List_1_t6F8B167DABA1E067E8E93E624709CAF42B91966B* L_34 = L_33->___BallSequence_6;
-		Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* L_35 = V_1;
-		NullCheck(L_34);
-		List_1_Add_m26129A5D541D94F2BF4B61AD39F9B9D18E55DFE1_inline(L_34, L_35, List_1_Add_m26129A5D541D94F2BF4B61AD39F9B9D18E55DFE1_RuntimeMethod_var);
+		BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* L_24 = __this->___PathController_5;
+		NullCheck(L_24);
+		List_1_t6F8B167DABA1E067E8E93E624709CAF42B91966B* L_25 = L_24->___BallSequence_6;
+		Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* L_26 = V_0;
+		NullCheck(L_25);
+		List_1_Add_m26129A5D541D94F2BF4B61AD39F9B9D18E55DFE1_inline(L_25, L_26, List_1_Add_m26129A5D541D94F2BF4B61AD39F9B9D18E55DFE1_RuntimeMethod_var);
+		// }
+		return;
+	}
+}
+// System.Void BallsFactory::NewRandomNumber()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallsFactory_NewRandomNumber_m5E0742C7C54DBAF91D0FA3A1E8109D5F2A29D825 (BallsFactory_tA3C187366ABF98F549BF792903FAB8B308904E80* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Count_m48BBB83C5F748E6E6FF0731C3682092DEA6A7173_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// randomNumber = Random.Range(0, AvailableMaterials.Count);
+		List_1_t386E09F4F22DDE4D2AC41A8567FFF283C254537B* L_0 = __this->___AvailableMaterials_15;
+		NullCheck(L_0);
+		int32_t L_1;
+		L_1 = List_1_get_Count_m48BBB83C5F748E6E6FF0731C3682092DEA6A7173_inline(L_0, List_1_get_Count_m48BBB83C5F748E6E6FF0731C3682092DEA6A7173_RuntimeMethod_var);
+		int32_t L_2;
+		L_2 = Random_Range_m6763D9767F033357F88B6637F048F4ACA4123B68(0, L_1, NULL);
+		__this->___randomNumber_21 = L_2;
+		// if (randomNumber == lastNumber)
+		int32_t L_3 = __this->___randomNumber_21;
+		int32_t L_4 = __this->___lastNumber_22;
+		if ((!(((uint32_t)L_3) == ((uint32_t)L_4))))
+		{
+			goto IL_003c;
+		}
+	}
+	{
+		// randomNumber = Random.Range(0, AvailableMaterials.Count);
+		List_1_t386E09F4F22DDE4D2AC41A8567FFF283C254537B* L_5 = __this->___AvailableMaterials_15;
+		NullCheck(L_5);
+		int32_t L_6;
+		L_6 = List_1_get_Count_m48BBB83C5F748E6E6FF0731C3682092DEA6A7173_inline(L_5, List_1_get_Count_m48BBB83C5F748E6E6FF0731C3682092DEA6A7173_RuntimeMethod_var);
+		int32_t L_7;
+		L_7 = Random_Range_m6763D9767F033357F88B6637F048F4ACA4123B68(0, L_6, NULL);
+		__this->___randomNumber_21 = L_7;
+	}
+
+IL_003c:
+	{
+		// if (randomNumber == lastNumber)
+		int32_t L_8 = __this->___randomNumber_21;
+		int32_t L_9 = __this->___lastNumber_22;
+		if ((!(((uint32_t)L_8) == ((uint32_t)L_9))))
+		{
+			goto IL_0061;
+		}
+	}
+	{
+		// randomNumber = Random.Range(0,AvailableMaterials.Count);
+		List_1_t386E09F4F22DDE4D2AC41A8567FFF283C254537B* L_10 = __this->___AvailableMaterials_15;
+		NullCheck(L_10);
+		int32_t L_11;
+		L_11 = List_1_get_Count_m48BBB83C5F748E6E6FF0731C3682092DEA6A7173_inline(L_10, List_1_get_Count_m48BBB83C5F748E6E6FF0731C3682092DEA6A7173_RuntimeMethod_var);
+		int32_t L_12;
+		L_12 = Random_Range_m6763D9767F033357F88B6637F048F4ACA4123B68(0, L_11, NULL);
+		__this->___randomNumber_21 = L_12;
+	}
+
+IL_0061:
+	{
+		// if (randomNumber == lastNumber)
+		int32_t L_13 = __this->___randomNumber_21;
+		int32_t L_14 = __this->___lastNumber_22;
+		if ((!(((uint32_t)L_13) == ((uint32_t)L_14))))
+		{
+			goto IL_0086;
+		}
+	}
+	{
+		// randomNumber = Random.Range(0, AvailableMaterials.Count);
+		List_1_t386E09F4F22DDE4D2AC41A8567FFF283C254537B* L_15 = __this->___AvailableMaterials_15;
+		NullCheck(L_15);
+		int32_t L_16;
+		L_16 = List_1_get_Count_m48BBB83C5F748E6E6FF0731C3682092DEA6A7173_inline(L_15, List_1_get_Count_m48BBB83C5F748E6E6FF0731C3682092DEA6A7173_RuntimeMethod_var);
+		int32_t L_17;
+		L_17 = Random_Range_m6763D9767F033357F88B6637F048F4ACA4123B68(0, L_16, NULL);
+		__this->___randomNumber_21 = L_17;
+	}
+
+IL_0086:
+	{
+		// if (randomNumber == lastNumber)
+		int32_t L_18 = __this->___randomNumber_21;
+		int32_t L_19 = __this->___lastNumber_22;
+		if ((!(((uint32_t)L_18) == ((uint32_t)L_19))))
+		{
+			goto IL_00ab;
+		}
+	}
+	{
+		// randomNumber = Random.Range(0, AvailableMaterials.Count);
+		List_1_t386E09F4F22DDE4D2AC41A8567FFF283C254537B* L_20 = __this->___AvailableMaterials_15;
+		NullCheck(L_20);
+		int32_t L_21;
+		L_21 = List_1_get_Count_m48BBB83C5F748E6E6FF0731C3682092DEA6A7173_inline(L_20, List_1_get_Count_m48BBB83C5F748E6E6FF0731C3682092DEA6A7173_RuntimeMethod_var);
+		int32_t L_22;
+		L_22 = Random_Range_m6763D9767F033357F88B6637F048F4ACA4123B68(0, L_21, NULL);
+		__this->___randomNumber_21 = L_22;
+	}
+
+IL_00ab:
+	{
+		// lastNumber = randomNumber;
+		int32_t L_23 = __this->___randomNumber_21;
+		__this->___lastNumber_22 = L_23;
 		// }
 		return;
 	}
@@ -5572,8 +5553,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallsFactory__ctor_m8629B9D3237BA56F5BDD
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// public float BallsDistanceMultiplicity = 1.3f;
-		__this->___BallsDistanceMultiplicity_8 = (1.29999995f);
+		// public float BallsDistanceMultiplicity = 1f;
+		__this->___BallsDistanceMultiplicity_8 = (1.0f);
 		// public int GeneratedBallsAmount = 10;
 		__this->___GeneratedBallsAmount_9 = ((int32_t)10);
 		// public double ProbabilityColorChange = 0.8f;
@@ -9601,7 +9582,7 @@ IL_024d_1:
 
 IL_025d:
 	{
-		// var length = ballsToDelete.Count * Factory.DistanceBetweenBalls * 0.4f;
+		// var length = ballsToDelete.Count * Factory.DistanceBetweenBalls * 1f;
 		List_1_t6F8B167DABA1E067E8E93E624709CAF42B91966B* L_103 = V_3;
 		NullCheck(L_103);
 		int32_t L_104;
@@ -9612,7 +9593,7 @@ IL_025d:
 		NullCheck(L_106);
 		float L_107;
 		L_107 = BallsFactory_get_DistanceBetweenBalls_m36DED13625FAE344028ABAD3858C9B60AECD0233_inline(L_106, NULL);
-		__this->___U3ClengthU3E5__4_7 = ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)L_104), L_107)), (0.400000006f)));
+		__this->___U3ClengthU3E5__4_7 = ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)L_104), L_107)), (1.0f)));
 		// MainAudioSource.Stop();
 		BezierPathController_tC141672DE98786047DA547707F5542715B2A902A* L_108 = V_1;
 		NullCheck(L_108);
@@ -10750,14 +10731,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Ball_set_BallId_mE4300DCA935
 		return;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Ball_get_BallId_m51170AE7006D3F7CFFFD45BB4844C3995905701C_inline (Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* __this, const RuntimeMethod* method) 
-{
-	{
-		// public int BallId { get; private set; }
-		int32_t L_0 = __this->___U3CBallIdU3Ek__BackingField_5;
-		return L_0;
-	}
-}
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Ball_get_Count_mDD378668E361ECA9B17081D2704DA670D25E1BAE_inline (Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10773,6 +10746,14 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Ball_set_Count_m5581474122AC
 		int32_t L_0 = ___0_value;
 		__this->___count_8 = L_0;
 		return;
+	}
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Ball_get_BallId_m51170AE7006D3F7CFFFD45BB4844C3995905701C_inline (Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* __this, const RuntimeMethod* method) 
+{
+	{
+		// public int BallId { get; private set; }
+		int32_t L_0 = __this->___U3CBallIdU3Ek__BackingField_5;
+		return L_0;
 	}
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_Lerp_m3A906D0530A94FAABB94F0F905E84D99BE85C3F8_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_a, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_b, float ___2_t, const RuntimeMethod* method) 

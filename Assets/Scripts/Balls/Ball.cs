@@ -25,7 +25,7 @@ public class Ball : MonoBehaviour
     public void SetBallId(int id)
     {
         BallId = id;
-        Debug.Log(BallId);
+        //Debug.Log(BallId);
         GetComponent<MeshRenderer>().material = (id == -1) ? GameObject.FindGameObjectWithTag("BallsFactory").GetComponent<BallsFactory>().BonusMaterial : GameObject.FindGameObjectWithTag("BallsFactory").GetComponent<BallsFactory>().AvailableMaterials[id];
     }
 
@@ -53,29 +53,40 @@ public class Ball : MonoBehaviour
             {
                 //PathController.Correction();
                 //PathController.DestroyBall(this);
-                if (PathController.BallSequence.Contains(this))
-                {
-                    //PathController.StopSequence();
-                    PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this,0f));
-                }
+                //if (PathController.BallSequence.Contains(this))
+                //{
+                //    //PathController.StopSequence();
+                //    PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this,0f));
+                //}
                 if (Count <= 0)
                 {
+                    //PathController.StopSequence();
                     PathController.DestroyBall(this);
-                    //PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this, 0f));
+                    PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this, 0f));
                 }
-                    
             }
         }
+        if (other.gameObject.tag == "Ball" && other.gameObject.GetComponent<Ball>().BallId == BallId)
+        {
+            Debug.Log("hit");
+            //PathController.InsertBallInSequence(this, other.GetComponent<Ball>());
+            //MustBeDestroyed = false;
+            PathController.DestroyBall(this);
+            PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this, 0f));
+        }
 
-        GetComponent<AnimationPlayer>().Play(AnimationThrowType.OnCollide);
-        if (PathController.BallSequence.Contains(this)) return;
-        if (other.gameObject.tag == "BallsTrap") return;
+        //GetComponent<AnimationPlayer>().Play(AnimationThrowType.OnCollide);
+        //if (PathController.BallSequence.Contains(this)) return;
+        //if (other.gameObject.tag == "BallsTrap") return;
 
         //StopAllCoroutines();
         //if (other.gameObject.tag == "Ball")
         //{
         //    PathController.InsertBallInSequence(this, other.GetComponent<Ball>());
         //    MustBeDestroyed = false;
+        //    //PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this, 0f));
+
+        //    //PathController.DestroyBall(this);
         //}
     }
 

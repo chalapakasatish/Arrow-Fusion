@@ -482,10 +482,10 @@ MonoBehaviour:
   AnimationManager: {fileID: 2101368369}
   BallSequence: []
   Factory: {fileID: 1558221129}
-  SegmentsPerCurve: 10
-  BallsSpeed: 30
+  SegmentsPerCurve: 20
+  BallsSpeed: 15
   RelaxedSpeed: 1
-  BackBallsSpeed: 3
+  BackBallsSpeed: 1
   InsertionSpeedMultiplicity: 2
   DebugBezierPath: 1
   DestroyingParticleSystemPrefab: {fileID: 100000, guid: 44fffce0ab7e00548a5ff773ba1a28d1,
@@ -1811,17 +1811,14 @@ MonoBehaviour:
   AudioSource: {fileID: 1546681673}
   BallsRoot: {fileID: 1548543145}
   BallsDistanceMultiplicity: 1
-  GeneratedBallsAmount: 100
+  GeneratedBallsAmount: 50
   GeneratedBalls: 0
-  ProbabilityColorChange: 0.800000011920929
-  BonusProbability: 0.10000000149011612
+  ProbabilityColorChange: 0.9
+  BonusProbability: 0.1
   AvailableMaterials:
   - {fileID: 2100000, guid: 626ef32d0ced3f24c8d0599f78535400, type: 2}
-  - {fileID: 2100000, guid: ba5ff9c63d6bbba4098d229d6893c44d, type: 2}
   - {fileID: 2100000, guid: 51482408211365a4d941bcd20e8ccc18, type: 2}
   - {fileID: 2100000, guid: cb74b0c0f386b6847a43aa5dfd9fef0b, type: 2}
-  - {fileID: 2100000, guid: 1e349368be733d74a846775feb2da8d8, type: 2}
-  - {fileID: 2100000, guid: d084854903a7da64c99e46c98f4f6009, type: 2}
   BonusMaterial: {fileID: 2100000, guid: f3422a87edc11a34386dd1961d91edf9, type: 2}
 --- !u!1 &1584095899
 GameObject:

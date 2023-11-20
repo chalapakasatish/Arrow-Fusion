@@ -28,7 +28,7 @@ public class BallsFactory : MonoBehaviour
     /// <summary>
     /// Multiplicity of distance between balls.
     /// </summary>
-    public float BallsDistanceMultiplicity = 1.3f;
+    public float BallsDistanceMultiplicity = 1f;
 
     /// <summary>
     /// Amount of generated balls.
@@ -133,37 +133,51 @@ public class BallsFactory : MonoBehaviour
     /// <summary>
     /// Generates a new ball.
     /// </summary>
+    int randomNumber;
+    int lastNumber;
     private void GenerateNewBall()
     {
         var ball = (GameObject)Instantiate(BallPrefab, transform.position, Quaternion.identity);
         ball.transform.parent = BallsRoot.transform;
         ball.transform.position = PathController.PathNodes[0];
         AudioSource.Play();
-        var nextId = 0;
-        if (_prevId == -3)
-        {
-            nextId = GetNextId();
-            _prevId = nextId;
-        }
-        else
-        {
-            if (_random.NextDouble() <= ProbabilityColorChange)
-            {
-                nextId = GetNextId();
-                _prevId = nextId;
-            }
-            else
-            {
-                nextId = _prevId;
-            }
-        }
+        //var nextId = 0;
+        //if (_prevId == -3)
+        //{
+        //    nextId = GetNextId();
+        //    _prevId = nextId;
+        //}
+        //else
+        //{
+        //    if (_random.NextDouble() <= ProbabilityColorChange)
+        //    {
+        //        nextId = GetNextId();
+        //        _prevId = nextId;
+        //    }
+        //    else
+        //    {
+        //        nextId = _prevId;
+        //    }
+        //}
+
+        NewRandomNumber();
+
         Ball ballComponent = ball.GetComponent<Ball>();
-        ballComponent.SetBallId(nextId);
+        ballComponent.SetBallId(lastNumber);
         ballComponent.NextNode = PathController.PathNodes[0];
         ballComponent.PathController = PathController;
         PathController.BallSequence.Add(ballComponent);
     }
-
+    
+    void NewRandomNumber()
+    {
+        randomNumber = Random.Range(0, AvailableMaterials.Count);
+        if (randomNumber == lastNumber)
+        {
+            randomNumber = Random.Range(0, AvailableMaterials.Count);
+        }
+        lastNumber = randomNumber;
+    }
 
     /// <summary>
     /// Starting the factory.
