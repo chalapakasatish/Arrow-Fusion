@@ -485,7 +485,7 @@ MonoBehaviour:
   SegmentsPerCurve: 20
   BallsSpeed: 15
   RelaxedSpeed: 1
-  BackBallsSpeed: 1
+  BackBallsSpeed: 2
   InsertionSpeedMultiplicity: 2
   DebugBezierPath: 1
   DestroyingParticleSystemPrefab: {fileID: 100000, guid: 44fffce0ab7e00548a5ff773ba1a28d1,
@@ -1811,7 +1811,7 @@ MonoBehaviour:
   AudioSource: {fileID: 1546681673}
   BallsRoot: {fileID: 1548543145}
   BallsDistanceMultiplicity: 1
-  GeneratedBallsAmount: 50
+  GeneratedBallsAmount: 20
   GeneratedBalls: 0
   ProbabilityColorChange: 0.9
   BonusProbability: 0.1

@@ -176,6 +176,26 @@ public class BallsFactory : MonoBehaviour
         {
             randomNumber = Random.Range(0, AvailableMaterials.Count);
         }
+        if (randomNumber == lastNumber)
+        {
+            randomNumber = Random.Range(0, AvailableMaterials.Count);
+        }
+        if (randomNumber == lastNumber)
+        {
+            randomNumber = Random.Range(0, AvailableMaterials.Count);
+        }
+        if (randomNumber == lastNumber)
+        {
+            randomNumber = Random.Range(0, AvailableMaterials.Count);
+        }
+        if (randomNumber == lastNumber)
+        {
+            randomNumber = Random.Range(0, AvailableMaterials.Count);
+        }
+        if (randomNumber == lastNumber)
+        {
+            randomNumber = Random.Range(0, AvailableMaterials.Count);
+        }
         lastNumber = randomNumber;
     }
 

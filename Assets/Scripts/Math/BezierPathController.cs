@@ -492,8 +492,8 @@ public class BezierPathController : MonoBehaviour
                 }
             }
 
-            var length = ballsToDelete.Count * Factory.DistanceBetweenBalls * 1.1f;
-            
+            var length = ballsToDelete.Count * Factory.DistanceBetweenBalls * 0.5f;
+
 
             //NOTE: scores
             //var prefab = (GameObject)Instantiate(PopupScoresPrefab, ballsToDelete[0].transform.position,Quaternion.identity);
