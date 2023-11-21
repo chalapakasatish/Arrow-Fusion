@@ -60,19 +60,19 @@ public class Ball : MonoBehaviour
                 //}
                 if (Count <= 0)
                 {
-                    //PathController.StopSequence();
                     PathController.DestroyBall(this);
-                    PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this, 0f));
+                    PathController.InsertBallInSequence(this, this);
+                    //PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this, 0f));
                 }
             }
         }
         if (other.gameObject.tag == "Ball" && other.gameObject.GetComponent<Ball>().BallId == BallId)
         {
-            Debug.Log("hit");
-            //PathController.InsertBallInSequence(this, other.GetComponent<Ball>());
-            //MustBeDestroyed = false;
-            PathController.DestroyBall(this);
-            PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this, 0f));
+            Debug.Log("Both Balls hit");
+            PathController.InsertBallInSequence(this, other.GetComponent<Ball>());
+            //MustBeDestroyed = true;
+            //PathController.DestroyBall(this);
+            //PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this, 0f));
         }
 
         //GetComponent<AnimationPlayer>().Play(AnimationThrowType.OnCollide);

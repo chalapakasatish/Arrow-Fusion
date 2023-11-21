@@ -14,16 +14,6 @@ public class ArrowShooter : MonoBehaviour
         transform.localRotation = Quaternion.Euler(transform.localRotation.x, -strawDigrees + 90,
             transform.rotation.z);
 
-        //if (Input.GetKey(KeyCode.RightArrow))
-        //{
-        //    transform.localPosition = Vector3.right * movingSpeed * Time.deltaTime;
-        //    //transform.Translate(Vector3.right * movingSpeed * Time.deltaTime);
-        //}
-        //else if (Input.GetKey(KeyCode.LeftArrow))
-        //{
-        //    transform.localPosition = Vector3.left * movingSpeed * Time.deltaTime;
-        //    //transform.Translate(Vector3.left * movingSpeed * Time.deltaTime);
-        //}
         if (Input.GetMouseButtonDown(0))
         {
             ShootArrow();
@@ -37,6 +27,6 @@ public class ArrowShooter : MonoBehaviour
 
         // Apply additional arrow behavior or force if needed
         Rigidbody arrowRb = arrow.GetComponent<Rigidbody>();
-        arrowRb.AddForce(transform.forward * 10f, ForceMode.Impulse);
+        arrowRb.AddForce(transform.forward * movingSpeed, ForceMode.Impulse);
     }
 }

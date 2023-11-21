@@ -309,8 +309,8 @@ public class BezierPathController : MonoBehaviour
             newBall.PathController = this;
             BallSequence.Insert(index, newBall);
             newBall.GetComponent<AnimationPlayer>().Play(AnimationThrowType.OnInsert);
-            StartCoroutine(MoveSequenceForward(BallSequence.GetRange(0,index), d, BallsSpeed*InsertionSpeedMultiplicity));
-            StartCoroutine(ShiftBallTo(newBall, contactedBall.transform.position, (d/BallsSpeed)/InsertionSpeedMultiplicity));
+            //StartCoroutine(MoveSequenceForward(BallSequence.GetRange(0,index), d, BallsSpeed*InsertionSpeedMultiplicity));
+            //StartCoroutine(ShiftBallTo(newBall, contactedBall.transform.position, (d/BallsSpeed)/InsertionSpeedMultiplicity));
             StartCoroutine(DelayedCheckEqualBalls(newBall, d/BallsSpeed*1.1f/InsertionSpeedMultiplicity));
             
             MainAudioSource.Stop();
@@ -392,7 +392,7 @@ public class BezierPathController : MonoBehaviour
     /// <param name="targetPosition">Destination.</param>
     /// <param name="time">Time.</param>
     /// <returns></returns>
-    private IEnumerator ShiftBallTo(Ball ball, Vector3 targetPosition, float time)
+    public IEnumerator ShiftBallTo(Ball ball, Vector3 targetPosition, float time)
     {
         var passedTime = 0f;
         var startPosition = ball.transform.position;
@@ -492,8 +492,7 @@ public class BezierPathController : MonoBehaviour
                 }
             }
 
-            var length = ballsToDelete.Count * Factory.DistanceBetweenBalls * 0.5f;
-
+            var length = ballsToDelete.Count * Factory.DistanceBetweenBalls * 0.2f;
 
             //NOTE: scores
             //var prefab = (GameObject)Instantiate(PopupScoresPrefab, ballsToDelete[0].transform.position,Quaternion.identity);
@@ -512,7 +511,7 @@ public class BezierPathController : MonoBehaviour
 			
 			var speed = BallsSpeed;
 			BallsSpeed = 0;
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(0.3f);
 			BallsSpeed = speed;
 
             Debug.Log("Count:" + ballsBeforeDeletingSequence.Count.ToString() + " Length:" + length.ToString() + " Time:" + (length / BackBallsSpeed).ToString());
@@ -533,18 +532,17 @@ public class BezierPathController : MonoBehaviour
             	yield return new WaitForEndOfFrame();
         	}
         	AdditionalAudioSource.Stop();
-			
-			//if (ballsBeforeDeletingSequence.Count>0)
-			//	yield return new WaitForSeconds(length/BackBallsSpeed);
+
+            if (ballsBeforeDeletingSequence.Count > 0)
+                yield return new WaitForSeconds(length / BackBallsSpeed);
             if (nextCheckBall != null)
             {
-				//Correction();
-                StartCoroutine(DelayedCheckEqualBalls(nextCheckBall, length / BackBallsSpeed));// length / BackBallsSpeed));
-                
-            }else{
+				Correction();
+                StartCoroutine(DelayedCheckEqualBalls(nextCheckBall, length / BackBallsSpeed));
+            }
+            else{
 				StartSequence(0);
 				Correction();
-				
 			}
 
         }
