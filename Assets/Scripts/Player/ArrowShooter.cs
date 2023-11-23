@@ -4,19 +4,25 @@ public class ArrowShooter : MonoBehaviour
 {
     public ObjectPoolManager objectPoolManager;
     public float movingSpeed;
+    public float timeGapForShoot;
 
     void Update()
     {
-        var dx = Input.mousePosition.x - Camera.main.WorldToScreenPoint(transform.position).x;
-        var dy = Input.mousePosition.y - Camera.main.WorldToScreenPoint(transform.position).y;
-        var strawRadians = Mathf.Atan2(dy, dx);
-        var strawDigrees = 360.0f * strawRadians / (2.0f * Mathf.PI);
-        transform.localRotation = Quaternion.Euler(transform.localRotation.x, -strawDigrees + 90,
-            transform.rotation.z);
+        //var dx = Input.mousePosition.x - Camera.main.WorldToScreenPoint(transform.position).x;
+        //var dy = Input.mousePosition.y - Camera.main.WorldToScreenPoint(transform.position).y;
+        //var strawRadians = Mathf.Atan2(dy, dx);
+        //var strawDigrees = 360.0f * strawRadians / (2.0f * Mathf.PI);
+        //transform.localRotation = Quaternion.Euler(transform.localRotation.x, -strawDigrees + 90,
+        //    transform.rotation.z);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && timeGapForShoot <= 0)
         {
             ShootArrow();
+            timeGapForShoot = 2;
+        }
+        else
+        {
+            timeGapForShoot -= Time.deltaTime;
         }
     }
 
