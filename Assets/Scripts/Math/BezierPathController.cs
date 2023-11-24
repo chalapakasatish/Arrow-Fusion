@@ -109,6 +109,8 @@ public class BezierPathController : MonoBehaviour
     public AudioSource AdditionalAudioSource;
 
     private bool _moving = false;
+    public GameObject ballLookAtThisObjectForward, ballLookAtThisObjectBackward;
+    public float ballMovingSpeedFB;
 
     /// <summary>
     /// Returns a length of path in Bezier curve.
@@ -186,9 +188,14 @@ public class BezierPathController : MonoBehaviour
                 currentNodeIndex--;
                 currentNodeIndexInBall--;
                 ball.NextNode=PathNodes[currentNodeIndexInBall];
+
+                ball.transform.GetChild(0).transform.LookAt(ballLookAtThisObjectBackward.gameObject.transform);
+                ball.transform.GetChild(0).transform.Rotate(new Vector3(ball.transform.GetChild(0).transform.position.x * ballMovingSpeedFB,
+                   ball.transform.GetChild(0).transform.position.y * ballMovingSpeedFB, ball.transform.GetChild(0).transform.position.z * ballMovingSpeedFB));
             }
 
         }
+        
     }
 
     /// <summary>
@@ -232,11 +239,20 @@ public class BezierPathController : MonoBehaviour
                 passedDistance += translationLength;
                 tmpPosition += translationVector;
                 ball.NextNode = PathNodes[currentNodeIndex];
+                //ball.transform.GetChild(0).Rotate(-Vector3.forward * 100f * Time.deltaTime);
+                //ball.transform.GetChild(0).transform.LookAt(PathNodes[currentNodeIndex]);
+
+                ball.transform.GetChild(0).transform.LookAt(ballLookAtThisObjectForward.gameObject.transform);
+                ball.transform.GetChild(0).transform.Rotate(new Vector3(ball.transform.GetChild(0).transform.position.x * ballMovingSpeedFB,
+                   ball.transform.GetChild(0).transform.position.y * ballMovingSpeedFB, ball.transform.GetChild(0).transform.position.z * ballMovingSpeedFB));
+
+
             }
 
         }
+
+
         ball.transform.Translate(tmpPosition-ball.transform.position);
-        ball.transform.GetChild(0).transform.Rotate(Vector3.forward * -100f * Time.deltaTime);
 
     }
 
