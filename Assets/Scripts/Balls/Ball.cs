@@ -21,12 +21,14 @@ public class Ball : MonoBehaviour
 
     public bool MustBeDestroyed = true;
     int count = 1;
-
+    //private void Update()
+    //{
+    //    transform.localEulerAngles = Vector3.forward * 50f * Time.deltaTime;
+    //}
     public void SetBallId(int id)
     {
         BallId = id;
-        //Debug.Log(BallId);
-        GetComponent<MeshRenderer>().material = (id == -1) ? GameObject.FindGameObjectWithTag("BallsFactory").GetComponent<BallsFactory>().BonusMaterial : GameObject.FindGameObjectWithTag("BallsFactory").GetComponent<BallsFactory>().AvailableMaterials[id];
+       transform.GetChild(0).GetComponent<MeshRenderer>().material = (id == -1) ? GameObject.FindGameObjectWithTag("BallsFactory").GetComponent<BallsFactory>().BonusMaterial : GameObject.FindGameObjectWithTag("BallsFactory").GetComponent<BallsFactory>().AvailableMaterials[id];
     }
 
     private IEnumerator SelfDestroyCoroutine(float delay)

@@ -138,7 +138,7 @@ public class BallsFactory : MonoBehaviour
     private void GenerateNewBall()
     {
         var ball = (GameObject)Instantiate(BallPrefab, transform.position, Quaternion.identity);
-        ball.transform.parent = BallsRoot.transform;
+        //ball.transform.parent = BallsRoot.transform;
         ball.transform.position = PathController.PathNodes[0];
         AudioSource.Play();
         //var nextId = 0;

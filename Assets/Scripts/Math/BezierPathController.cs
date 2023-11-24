@@ -142,10 +142,15 @@ public class BezierPathController : MonoBehaviour
             var currentBall = GetBezierPath(BallSequence[i].transform.position);
             var nextBall = GetBezierPath(BallSequence[i + 1].transform.position);
             var d = currentBall - nextBall;
-            if (d < Factory.DistanceBetweenBalls) 
-                MoveBallBackward(BallSequence[i + 1].GetComponent<Ball>(),Mathf.Abs(d - Factory.DistanceBetweenBalls));
+            if (d < Factory.DistanceBetweenBalls)
+            {
+                MoveBallBackward(BallSequence[i + 1].GetComponent<Ball>(), Mathf.Abs(d - Factory.DistanceBetweenBalls));
+
+            }
             else
+            {
                 MoveBallForward(BallSequence[i + 1].GetComponent<Ball>(), Mathf.Abs(d - Factory.DistanceBetweenBalls));
+            }
         }
     }
 
@@ -228,8 +233,11 @@ public class BezierPathController : MonoBehaviour
                 tmpPosition += translationVector;
                 ball.NextNode = PathNodes[currentNodeIndex];
             }
+
         }
         ball.transform.Translate(tmpPosition-ball.transform.position);
+        ball.transform.GetChild(0).transform.Rotate(Vector3.forward * -100f * Time.deltaTime);
+
     }
 
     /// <summary>
