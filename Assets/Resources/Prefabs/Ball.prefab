@@ -192,7 +192,6 @@ GameObject:
   - component: {fileID: 6822292733971362706}
   - component: {fileID: 7672868125632374685}
   - component: {fileID: 8005955884487850983}
-  - component: {fileID: 3285112285083064449}
   m_Layer: 0
   m_Name: BallGFX
   m_TagString: Untagged
@@ -243,7 +242,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: cb74b0c0f386b6847a43aa5dfd9fef0b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -265,16 +264,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3285112285083064449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5798667856621753185}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d96cf84b1ac1e2949b2dcf49dae809f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 45

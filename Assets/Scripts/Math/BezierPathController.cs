@@ -191,7 +191,7 @@ public class BezierPathController : MonoBehaviour
 
                 ball.transform.GetChild(0).transform.LookAt(ballLookAtThisObjectBackward.gameObject.transform);
                 ball.transform.GetChild(0).transform.Rotate(new Vector3(ball.transform.GetChild(0).transform.position.x * ballMovingSpeedFB,
-                   ball.transform.GetChild(0).transform.position.y * ballMovingSpeedFB, ball.transform.GetChild(0).transform.position.z * ballMovingSpeedFB));
+                ball.transform.GetChild(0).transform.position.y * ballMovingSpeedFB, ball.transform.GetChild(0).transform.position.z * ballMovingSpeedFB));
             }
 
         }
