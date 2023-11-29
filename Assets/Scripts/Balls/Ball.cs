@@ -1,4 +1,8 @@
+using System;
 using System.Collections;
+using System.Linq;
+using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Ball : MonoBehaviour
@@ -20,7 +24,16 @@ public class Ball : MonoBehaviour
     public BezierPathController PathController;
 
     public bool MustBeDestroyed = true;
-    int count = 1;
+    int count;
+    public TMP_Text[] countText;
+    private void Start()
+    {
+        count = UnityEngine.Random.Range(2, 6);
+        for (int i = 0; i < countText.Length; i++)
+        {
+            countText[i].text = Count.ToString();
+        }
+    }
     //private void Update()
     //{
     //    transform.localEulerAngles = Vector3.forward * 50f * Time.deltaTime;
@@ -28,6 +41,7 @@ public class Ball : MonoBehaviour
     public void SetBallId(int id)
     {
         BallId = id;
+        Debug.Log(BallId);
        transform.GetChild(0).GetComponent<MeshRenderer>().material = (id == -1) ? GameObject.FindGameObjectWithTag("BallsFactory").GetComponent<BallsFactory>().BonusMaterial : GameObject.FindGameObjectWithTag("BallsFactory").GetComponent<BallsFactory>().AvailableMaterials[id];
     }
 
@@ -45,14 +59,23 @@ public class Ball : MonoBehaviour
     {
         if (other.tag == "Arrow")
         {
+
             Destroy(other.gameObject);
             ObjectPoolManager.Instance.arrowPool.Clear();
             //ObjectPoolManager.Instance.ReturnArrowToPool(other.gameObject);
             //other.transform.position = Vector3.zero;
             //other.transform.rotation = Quaternion.identity;
             Count--;
-            if(Count <= 0)
+            for (int i = 0; i < countText.Length; i++)
             {
+                countText[i].text = Count.ToString();
+            }
+            if (Count <= 0)
+            {
+                for (int i = 0; i < countText.Length; i++)
+                {
+                    countText[i].text = Count.ToString();
+                }
                 //PathController.Correction();
                 //PathController.DestroyBall(this);
                 //if (PathController.BallSequence.Contains(this))
@@ -62,7 +85,7 @@ public class Ball : MonoBehaviour
                 //}
                 if (Count <= 0)
                 {
-                    PathController.DestroyBall(this);
+                    //PathController.DestroyBall(this);
                     PathController.InsertBallInSequence(this, this);
                     //PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this, 0f));
                 }

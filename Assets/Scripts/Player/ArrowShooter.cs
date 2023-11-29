@@ -18,7 +18,7 @@ public class ArrowShooter : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && timeGapForShoot <= 0)
         {
             ShootArrow();
-            timeGapForShoot = 2;
+            timeGapForShoot = 1;
         }
         else
         {

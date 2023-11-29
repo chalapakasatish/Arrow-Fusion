@@ -207,7 +207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252049856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.29, y: -2.34, z: 1.14}
+  m_LocalPosition: {x: 1.29, y: -2.5, z: 1.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -536,12 +536,20 @@ MonoBehaviour:
   BallSequence: []
   Factory: {fileID: 1558221129}
   SegmentsPerCurve: 30
-  BallsSpeed: 15
+  BallsSpeed: 13
   RelaxedSpeed: 1
   BackBallsSpeed: 3
   InsertionSpeedMultiplicity: 2
   DebugBezierPath: 1
-  DestroyingParticleSystemPrefab: {fileID: 100000, guid: 44fffce0ab7e00548a5ff773ba1a28d1,
+  DestroyingParticleSystemPrefab: {fileID: 1796225982789163037, guid: d57abdd671239ad4ea5bcbd2a495d50e,
+    type: 3}
+  DestroyingParticleSystemPrefab0: {fileID: 1796225982789163037, guid: b73fff0c378f8b441adb6421977524ad,
+    type: 3}
+  DestroyingParticleSystemPrefab1: {fileID: 1796225982789163037, guid: 8d3376e0fbda5d24ebd349ec9179401c,
+    type: 3}
+  DestroyingParticleSystemPrefab2: {fileID: 1796225982789163037, guid: 9998d4f8303fb134fb609333f83b7821,
+    type: 3}
+  DestroyingParticleSystemPrefab3: {fileID: 1796225982789163037, guid: bf0339f3e06c9394d98ab8b52c923632,
     type: 3}
   PopupScoresPrefab: {fileID: 100000, guid: f27003cc6bef0ed48981b3bcf0fb6f29, type: 3}
   BonusRadiusDestroy: 2
@@ -1268,7 +1276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659571444}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.02, y: 0, z: -22.18}
+  m_LocalPosition: {x: 4.02, y: 0, z: -21.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1499,7 +1507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPoolManager: {fileID: 1464753734}
   movingSpeed: 30
-  timeGapForShoot: 2
+  timeGapForShoot: 0.1
 --- !u!4 &947700619
 Transform:
   m_ObjectHideFlags: 0
@@ -1917,7 +1925,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398739778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.14, y: 0, z: -22.18}
+  m_LocalPosition: {x: 6.14, y: 0, z: -21.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2139,7 +2147,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 386c1d3ed8578b0438d8f96c364cc44a, type: 2}
   - {fileID: 2100000, guid: d8889657c224b3a478a57751bca5a5d0, type: 2}
   - {fileID: 2100000, guid: b1f5c696382fed74897c5a26764bf15d, type: 2}
-  - {fileID: 2100000, guid: f7d939c94cf7c014998c4a666a9f05e8, type: 2}
   BonusMaterial: {fileID: 2100000, guid: f3422a87edc11a34386dd1961d91edf9, type: 2}
 --- !u!1 &1584095899
 GameObject:

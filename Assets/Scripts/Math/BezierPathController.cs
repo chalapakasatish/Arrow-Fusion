@@ -67,7 +67,8 @@ public class BezierPathController : MonoBehaviour
     /// <summary>
     /// Prefab containig destroy animation.
     /// </summary>
-    public GameObject DestroyingParticleSystemPrefab;
+    public GameObject DestroyingParticleSystemPrefab, DestroyingParticleSystemPrefab0, DestroyingParticleSystemPrefab1
+        , DestroyingParticleSystemPrefab2, DestroyingParticleSystemPrefab3;
 
     /// <summary>
     /// Prefab of popup scores.
@@ -242,15 +243,16 @@ public class BezierPathController : MonoBehaviour
                 //ball.transform.GetChild(0).Rotate(-Vector3.forward * 100f * Time.deltaTime);
                 //ball.transform.GetChild(0).transform.LookAt(PathNodes[currentNodeIndex]);
 
-                ball.transform.GetChild(0).transform.LookAt(ballLookAtThisObjectForward.gameObject.transform);
-                ball.transform.GetChild(0).transform.Rotate(new Vector3(ball.transform.GetChild(0).transform.position.x * ballMovingSpeedFB,
-                   ball.transform.GetChild(0).transform.position.y * ballMovingSpeedFB, ball.transform.GetChild(0).transform.position.z * ballMovingSpeedFB));
+                
 
 
             }
 
         }
-
+        ball.transform.GetChild(0).transform.LookAt(ballLookAtThisObjectForward.gameObject.transform);
+        GameObject childBall = ball.transform.GetChild(0).gameObject;
+        childBall.transform.Rotate(new Vector3(childBall.transform.position.x * ballMovingSpeedFB,
+           childBall.transform.position.y * ballMovingSpeedFB, childBall.transform.position.z * ballMovingSpeedFB));
 
         ball.transform.Translate(tmpPosition-ball.transform.position);
 
@@ -280,7 +282,21 @@ public class BezierPathController : MonoBehaviour
     public void DestroyBall(Ball ball, float delay = 0)
     {
         ball.GetComponent<AnimationPlayer>().Play(AnimationThrowType.OnDestroy);
-        Instantiate(DestroyingParticleSystemPrefab, ball.transform.position, Quaternion.identity);
+        switch(ball.gameObject.GetComponent<Ball>().BallId)
+        {
+            case 0:
+                Instantiate(DestroyingParticleSystemPrefab0, ball.transform.position, Quaternion.identity);
+                break;
+            case 1:
+                Instantiate(DestroyingParticleSystemPrefab1, ball.transform.position, Quaternion.identity);
+                break;
+            case 2:
+                Instantiate(DestroyingParticleSystemPrefab2, ball.transform.position, Quaternion.identity);
+                break;
+            case 3:
+                Instantiate(DestroyingParticleSystemPrefab3, ball.transform.position, Quaternion.identity);
+                break;
+        }
         StartCoroutine(DestroyBallCoroutine(ball, delay));
     }
 
