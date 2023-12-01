@@ -72,6 +72,7 @@ public class Ball : MonoBehaviour
             }
             if (Count <= 0)
             {
+                GameManager.Instance.arrowShooterScript.isShooting = false;
                 for (int i = 0; i < countText.Length; i++)
                 {
                     countText[i].text = Count.ToString();
@@ -93,6 +94,7 @@ public class Ball : MonoBehaviour
         }
         if (other.gameObject.tag == "Ball" && other.gameObject.GetComponent<Ball>().BallId == BallId)
         {
+            GameManager.Instance.arrowShooterScript.isShooting = false;
             Debug.Log("Both Balls hit");
             PathController.InsertBallInSequence(this, other.GetComponent<Ball>());
             //MustBeDestroyed = true;

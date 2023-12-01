@@ -5,7 +5,7 @@ public class ArrowShooter : MonoBehaviour
     public ObjectPoolManager objectPoolManager;
     public float movingSpeed;
     public float timeGapForShoot;
-
+    public bool isShooting;
     void Update()
     {
         //var dx = Input.mousePosition.x - Camera.main.WorldToScreenPoint(transform.position).x;
@@ -15,7 +15,7 @@ public class ArrowShooter : MonoBehaviour
         //transform.localRotation = Quaternion.Euler(transform.localRotation.x, -strawDigrees + 90,
         //    transform.rotation.z);
 
-        if (Input.GetMouseButtonDown(0) && timeGapForShoot <= 0)
+        if (timeGapForShoot <= 0 && isShooting)
         {
             ShootArrow();
             timeGapForShoot = 1;

@@ -5,13 +5,28 @@ using UnityEngine;
 public class ArrowMovement : MonoBehaviour
 {
     public float movementSpeed = 5f; // Adjust the speed as needed
-
+    private Touch touch;
+    private float speedMofifier;
+    private void Start()
+    {
+        speedMofifier = 0.01f;
+    }
     void Update()
     {
-        // Move the player left or right based on input
-        MovePlayer();
-    }
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -5f, 5f), transform.position.y, transform.position.z);
 
+
+        if (Input.touchCount > 0)
+        {
+            touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Moved)
+            {
+                transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * speedMofifier, transform.position.y, transform.position.z);
+            }
+
+        }
+    }
     void MovePlayer()
     {
         // Get the horizontal input axis (left/right arrow keys or A/D keys)

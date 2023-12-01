@@ -255,7 +255,7 @@ public class BezierPathController : MonoBehaviour
            childBall.transform.position.y * ballMovingSpeedFB, childBall.transform.position.z * ballMovingSpeedFB));
 
         ball.transform.Translate(tmpPosition-ball.transform.position);
-
+        GameManager.Instance.arrowShooterScript.isShooting = true;
     }
 
     /// <summary>
@@ -607,6 +607,7 @@ public class BezierPathController : MonoBehaviour
         }
         //Destroy(ball.gameObject);
         ball.gameObject.SetActive(false);
+        
     }
 
     public IEnumerator DelayedDecreaseSpeed(float delay, float newSpeed)
