@@ -111,7 +111,7 @@ public class BezierPathController : MonoBehaviour
 
     private bool _moving = false;
     public GameObject ballLookAtThisObjectForward, ballLookAtThisObjectBackward;
-    public float ballMovingSpeedFB;
+    public float ballMovingSpeedFB, ballMovingSpeedBB;
 
     /// <summary>
     /// Returns a length of path in Bezier curve.
@@ -190,13 +190,21 @@ public class BezierPathController : MonoBehaviour
                 currentNodeIndexInBall--;
                 ball.NextNode=PathNodes[currentNodeIndexInBall];
 
-                ball.transform.GetChild(0).transform.LookAt(ballLookAtThisObjectBackward.gameObject.transform);
-                ball.transform.GetChild(0).transform.Rotate(new Vector3(ball.transform.GetChild(0).transform.position.x * ballMovingSpeedFB,
-                ball.transform.GetChild(0).transform.position.y * ballMovingSpeedFB, ball.transform.GetChild(0).transform.position.z * ballMovingSpeedFB));
+                //ball.transform.GetChild(0).transform.LookAt(ballLookAtThisObjectBackward.gameObject.transform);
+                //ball.transform.GetChild(0).transform.Rotate(new Vector3(ball.transform.GetChild(0).transform.position.x * ballMovingSpeedFB,
+                //ball.transform.GetChild(0).transform.position.y * ballMovingSpeedFB, ball.transform.GetChild(0).transform.position.z * ballMovingSpeedFB));
+
+
+               
             }
 
         }
-        
+
+        ball.transform.GetChild(0).transform.LookAt(ballLookAtThisObjectForward.gameObject.transform);
+        GameObject childBall = ball.transform.GetChild(0).gameObject;
+        childBall.transform.Rotate(new Vector3(childBall.transform.position.x * ballMovingSpeedBB,
+           childBall.transform.position.y * ballMovingSpeedBB, childBall.transform.position.z * ballMovingSpeedBB));
+
     }
 
     /// <summary>
@@ -532,7 +540,7 @@ public class BezierPathController : MonoBehaviour
                 }
             }
 
-            var length = ballsToDelete.Count * Factory.DistanceBetweenBalls * 0.2f;
+            var length = ballsToDelete.Count * Factory.DistanceBetweenBalls * 0.25f;
 
             //NOTE: scores
             //var prefab = (GameObject)Instantiate(PopupScoresPrefab, ballsToDelete[0].transform.position,Quaternion.identity);
@@ -551,7 +559,7 @@ public class BezierPathController : MonoBehaviour
 			
 			var speed = BallsSpeed;
 			BallsSpeed = 0;
-			yield return new WaitForSeconds(0.3f);
+			yield return new WaitForSeconds(0.2f);
 			BallsSpeed = speed;
 
             Debug.Log("Count:" + ballsBeforeDeletingSequence.Count.ToString() + " Length:" + length.ToString() + " Time:" + (length / BackBallsSpeed).ToString());
@@ -577,18 +585,18 @@ public class BezierPathController : MonoBehaviour
                 yield return new WaitForSeconds(length / BackBallsSpeed);
             if (nextCheckBall != null)
             {
-				Correction();
+				//Correction();
                 StartCoroutine(DelayedCheckEqualBalls(nextCheckBall, length / BackBallsSpeed));
             }
             else{
 				StartSequence(0);
-				Correction();
+				//Correction();
 			}
 
         }
         else {
 			StartSequence(0);
-			Correction();
+			//Correction();
 		}
     }
 
