@@ -359,8 +359,8 @@ public class BezierPathController : MonoBehaviour
             newBall.GetComponent<AnimationPlayer>().Play(AnimationThrowType.OnInsert);
             //StartCoroutine(MoveSequenceForward(BallSequence.GetRange(0,index), d, BallsSpeed*InsertionSpeedMultiplicity));
             //StartCoroutine(ShiftBallTo(newBall, contactedBall.transform.position, (d/BallsSpeed)/InsertionSpeedMultiplicity));
-            StartCoroutine(DelayedCheckEqualBalls(newBall, d/BallsSpeed*1.1f/InsertionSpeedMultiplicity));
-            
+            //StartCoroutine(DelayedCheckEqualBalls(newBall, d/BallsSpeed*1.1f/InsertionSpeedMultiplicity));
+            StartCoroutine(DelayedCheckEqualBalls(newBall, 0.2f));
             MainAudioSource.Stop();
             MainAudioSource.clip = BlastSound;
             MainAudioSource.Play();
@@ -559,7 +559,7 @@ public class BezierPathController : MonoBehaviour
 			
 			var speed = BallsSpeed;
 			BallsSpeed = 0;
-			yield return new WaitForSeconds(0.2f);
+			yield return new WaitForSeconds(0);
 			BallsSpeed = speed;
 
             Debug.Log("Count:" + ballsBeforeDeletingSequence.Count.ToString() + " Length:" + length.ToString() + " Time:" + (length / BackBallsSpeed).ToString());
