@@ -33,6 +33,7 @@ public class BallsTrap : MonoBehaviour
                 PathController.BallSequence.Count == 0 && !_gameOver)
             {
                 _win = true;
+                Debug.Log("GameWin");
 				//GameWonMenu.active = true;
                 //MusicManager.Win();
                 yield break;
@@ -59,7 +60,8 @@ public class BallsTrap : MonoBehaviour
             PathController.StopSequence();
             AnimationManager.RunAnimation(AnimationThrowType.OnGameOver);
             _gameOver = true;
-			//GameOverMenu.active = true;
+            //GameOverMenu.active = true;
+            Debug.Log("GameLoose");
             PathController.MoveToDestroyAll();
         }
     }

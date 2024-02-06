@@ -138,8 +138,11 @@ public class BallsCannon : MonoBehaviour
     /// </summary>
     void Shoot()
     {
-        if (PathController.BallSequence.Count == 0) return;
-        
+        if (PathController.BallSequence.Count == 0)
+        {
+            return;
+        }
+
         _audioSource.Play();
         var shootVector = transform.forward;
         var ball = (GameObject)Instantiate(BallPrefab,transform.position/*new Vector3(transform.position.x + 1f,transform.position.y,transform.position.z + 2f)*/, Quaternion.identity);

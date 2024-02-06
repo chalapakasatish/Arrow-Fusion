@@ -17,7 +17,6 @@ public class ArrowMovement : MonoBehaviour
     {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -5f, 5f), transform.position.y, transform.position.z);
 
-
         if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
@@ -38,23 +37,21 @@ public class ArrowMovement : MonoBehaviour
                     playerAnimator.SetBool("isBackward", true);
                     playerAnimator.SetBool("isIdle", false);
                 }
-                transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * speedMofifier, transform.position.y, transform.position.z);
             }
-            //if (touch.phase == TouchPhase.Stationary)
-            //{
-            //    Debug.Log("Idle");
-            //    playerAnimator.SetBool("isForward", false);
-            //    playerAnimator.SetBool("isBackward", false);
-            //    playerAnimator.SetBool("isIdle", true);
-            //}
+            if (touch.phase == TouchPhase.Stationary)
+            {
+                StartCoroutine(WaitforIdleAnimation());
+            }
+            transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * speedMofifier, transform.position.y, transform.position.z);
         }
-        else
-        {
-            Debug.Log("Idle");
-            playerAnimator.SetBool("isForward", false);
-            playerAnimator.SetBool("isBackward", false);
-            playerAnimator.SetBool("isIdle", true);
-        }
+    }
+    public IEnumerator WaitforIdleAnimation()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Debug.Log("Idle");
+        playerAnimator.SetBool("isForward", false);
+        playerAnimator.SetBool("isBackward", false);
+        playerAnimator.SetBool("isIdle", true);
     }
     void MovePlayer()
     {
