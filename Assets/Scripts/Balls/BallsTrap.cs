@@ -34,7 +34,10 @@ public class BallsTrap : MonoBehaviour
             {
                 _win = true;
                 Debug.Log("GameWin");
-				//GameWonMenu.active = true;
+               
+                GameManager.Instance.uiManager.ShowPanel(GameManager.Instance.uiManager.gameWinPanel);
+
+                //GameWonMenu.active = true;
                 //MusicManager.Win();
                 yield break;
             }
@@ -62,6 +65,7 @@ public class BallsTrap : MonoBehaviour
             _gameOver = true;
             //GameOverMenu.active = true;
             Debug.Log("GameLoose");
+            GameManager.Instance.uiManager.ShowPanel(GameManager.Instance.uiManager.gameLosePanel);
             PathController.MoveToDestroyAll();
         }
     }
