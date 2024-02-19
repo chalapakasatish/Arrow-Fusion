@@ -28,7 +28,7 @@ public class Ball : MonoBehaviour
     public TMP_Text[] countText;
     private void Start()
     {
-        count = UnityEngine.Random.Range(2, 6);
+        count = 1;/*UnityEngine.Random.Range(2, 6);*/
         for (int i = 0; i < countText.Length; i++)
         {
             countText[i].text = Count.ToString();
