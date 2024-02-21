@@ -190,6 +190,7 @@ UnityEngine.AndroidJNI::SetStringField
 UnityEngine.AndroidJNIHelper::get_debug
 UnityEngine.AndroidJNIHelper::set_debug
 UnityEngine.Animation::Play
+UnityEngine.Animation::PlayDefaultAnimation
 UnityEngine.Animation::GetStateCount
 UnityEngine.Animation::set_clip
 UnityEngine.Animation::GetStateAtIndex
@@ -451,6 +452,7 @@ UnityEngine.GameObject::GetComponent
 UnityEngine.GameObject::GetComponentInChildren
 UnityEngine.GameObject::GetComponentInParent
 UnityEngine.GameObject::Internal_AddComponentWithType
+UnityEngine.GameObject::Find
 UnityEngine.GameObject::FindGameObjectWithTag
 UnityEngine.GameObject::get_transform
 UnityEngine.GeometryUtility::TestPlanesAABB_Injected
@@ -619,6 +621,8 @@ UnityEngine.Light::get_shadowStrength
 UnityEngine.Light::get_spotAngle
 UnityEngine.Light::get_bakingOutput_Injected
 UnityEngine.Light::get_color_Injected
+UnityEngine.Light::set_color_Injected
+UnityEngine.Light::set_intensity
 UnityEngine.Light::get_shadows
 UnityEngine.Light::get_type
 UnityEngine.Light::get_shadowResolution
@@ -977,6 +981,7 @@ UnityEngine.Resources::GetBuiltinResource
 UnityEngine.ResourcesAPIInternal::Load
 UnityEngine.ResourcesAPIInternal::FindShaderByName
 UnityEngine.Rigidbody::AddForce_Injected
+UnityEngine.Rigidbody::set_freezeRotation
 UnityEngine.ScalableBufferManager::get_heightScaleFactor
 UnityEngine.ScalableBufferManager::get_widthScaleFactor
 UnityEngine.ScalableBufferManager::ResizeBuffers

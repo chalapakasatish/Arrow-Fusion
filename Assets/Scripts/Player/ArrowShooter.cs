@@ -8,54 +8,72 @@ public class ArrowShooter : MonoBehaviour
     public float timeGapForShoot;
     public bool isShooting;
     public Transform firstArrowPosition, secondArrowPosition;
+    
     public enum PowerUpsEnum
     {
         SINGLEARROW,
-        DOUBLEARROW
+        DOUBLEARROW,
+        FIREARROW
     }
     public PowerUpsEnum powerUpsEnum;
-    public event Action powerUpAction;
-    private void Start()
+    public event Action<PowerUpsEnum> powerUpAction;
+    private void Awake()
     {
-        powerUpsEnum = PowerUpsEnum.SINGLEARROW;
-        powerUpAction?.Invoke();
-        switch (powerUpsEnum) 
-        { 
-            case PowerUpsEnum.SINGLEARROW:
-                powerUpAction = SingleArrow;
-                break; 
+        powerUpsEnum = PowerUpsEnum.SINGLEARROW;//declaration enum
+        powerUpAction += SwitchPowerups;// adding method to action
+        powerUpAction?.Invoke(powerUpsEnum);//calling using action parameters
+    }
 
+    public void SwitchPowerups(PowerUpsEnum powerUpsEnum)
+    {
+        switch (powerUpsEnum)
+        {
+            case PowerUpsEnum.SINGLEARROW:
+                ShootArrow(1);
+                break;
             case PowerUpsEnum.DOUBLEARROW:
-                powerUpAction = DoubleArrow;
+                ShootArrow(2);
+                break;
+            case PowerUpsEnum.FIREARROW:
+                FireArrow();
                 break;
         }
     }
-
-    public void SingleArrow()
+    private void OnTriggerEnter(Collider other)
     {
-        ShootArrow(1);
+        if (other.TryGetComponent(out PowerupTrigger powerupTrigger))
+        {
+            powerUpsEnum = (PowerUpsEnum)UnityEngine.Random.Range(0, 3);
+            powerUpAction?.Invoke(powerUpsEnum);
+        }
     }
-    public void DoubleArrow()
+
+    public void FireArrow()
     {
-        ShootArrow(2);
+        // Get an arrow from the object pool
+        GameObject arrow = objectPoolManager.GetArrowFromPoolFireArrow(firstArrowPosition.transform.position, Quaternion.identity);
+        // Apply additional arrow behavior or force if needed
+        Rigidbody arrowRb = arrow.GetComponent<Rigidbody>();
+        arrowRb.AddForce(transform.forward * movingSpeed, ForceMode.Impulse);
     }
     private void OnDestroy()
     {
-        powerUpAction -= SingleArrow;
-        powerUpAction -= DoubleArrow;
+        powerUpAction -= SwitchPowerups;
     }
     void Update()
     {
+        #region Delete
         //var dx = Input.mousePosition.x - Camera.main.WorldToScreenPoint(transform.position).x;
         //var dy = Input.mousePosition.y - Camera.main.WorldToScreenPoint(transform.position).y;
         //var strawRadians = Mathf.Atan2(dy, dx);
         //var strawDigrees = 360.0f * strawRadians / (2.0f * Mathf.PI);
         //transform.localRotation = Quaternion.Euler(transform.localRotation.x, -strawDigrees + 90,
         //    transform.rotation.z);
+        #endregion
 
         if (timeGapForShoot <= 0 && isShooting)
         {
-            powerUpAction?.Invoke();
+            powerUpAction?.Invoke(powerUpsEnum);
             timeGapForShoot = 1;
         }
         else
@@ -80,12 +98,11 @@ public class ArrowShooter : MonoBehaviour
                 // Apply additional arrow behavior or force if needed
                 Rigidbody arrowRb1 = arrow1.GetComponent<Rigidbody>();
                 arrowRb1.AddForce(transform.forward * movingSpeed, ForceMode.Impulse);
-
                 GameObject arrow2 = objectPoolManager.GetArrowFromPool(secondArrowPosition.transform.position, Quaternion.identity);
                 Rigidbody arrowRb2 = arrow2.GetComponent<Rigidbody>();
                 arrowRb2.AddForce(transform.forward * movingSpeed, ForceMode.Impulse);
                 break;
         }
-        
     }
+    
 }

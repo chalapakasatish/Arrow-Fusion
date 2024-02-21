@@ -1,4 +1,4 @@
-Library: D:\Github\Arrow-Fusion\Temp\StagingArea\tempburstlibs\arm64-v8a\lib_burst_generated
+Library: E:\GitHub\Arrow-Fusion\Temp\StagingArea\tempburstlibs\arm64-v8a\lib_burst_generated
 --platform=Android
 --backend=burst-llvm-14
 --target=ARMV8A_AARCH64
@@ -129,8 +129,8 @@ Library: D:\Github\Arrow-Fusion\Temp\StagingArea\tempburstlibs\arm64-v8a\lib_bur
 --compilation-defines=MODULE_PARTICLE_SYSTEM_EXISTS
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=D:\Github\Arrow-Fusion\Temp\Burst
---output=D:\Github\Arrow-Fusion\Temp\StagingArea\tempburstlibs\arm64-v8a\lib_burst_generated
+--temp-folder=E:\GitHub\Arrow-Fusion\Temp\Burst
+--output=E:\GitHub\Arrow-Fusion\Temp\StagingArea\tempburstlibs\arm64-v8a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 --pdb-search-paths=Temp/ManagedSymbols/
 

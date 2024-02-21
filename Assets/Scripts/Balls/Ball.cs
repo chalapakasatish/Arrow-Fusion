@@ -28,7 +28,7 @@ public class Ball : MonoBehaviour
     public TMP_Text[] countText;
     private void Start()
     {
-        count = 1;/*UnityEngine.Random.Range(2, 6);*/
+        count = UnityEngine.Random.Range(2, 6);
         for (int i = 0; i < countText.Length; i++)
         {
             countText[i].text = Count.ToString();
@@ -41,7 +41,7 @@ public class Ball : MonoBehaviour
     public void SetBallId(int id)
     {
         BallId = id;
-        Debug.Log(BallId);
+        //Debug.Log(BallId);
        transform.GetChild(0).GetComponent<MeshRenderer>().material = (id == -1) ? GameObject.FindGameObjectWithTag("BallsFactory").GetComponent<BallsFactory>().BonusMaterial : GameObject.FindGameObjectWithTag("BallsFactory").GetComponent<BallsFactory>().AvailableMaterials[id];
     }
 
@@ -59,13 +59,52 @@ public class Ball : MonoBehaviour
     {
         if (other.tag == "Arrow")
         {
-
-            Destroy(other.gameObject);
+            foreach(var item in ObjectPoolManager.Instance.arrowPool)
+            {
+                Destroy(item.gameObject);
+            }
             ObjectPoolManager.Instance.arrowPool.Clear();
             //ObjectPoolManager.Instance.ReturnArrowToPool(other.gameObject);
             //other.transform.position = Vector3.zero;
             //other.transform.rotation = Quaternion.identity;
             Count--;
+            for (int i = 0; i < countText.Length; i++)
+            {
+                countText[i].text = Count.ToString();
+            }
+            if (Count <= 0)
+            {
+                GameManager.Instance.arrowShooterScript.isShooting = false;
+                for (int i = 0; i < countText.Length; i++)
+                {
+                    countText[i].text = Count.ToString();
+                }
+                //PathController.Correction();
+                //PathController.DestroyBall(this);
+                //if (PathController.BallSequence.Contains(this))
+                //{
+                //    //PathController.StopSequence();
+                //    PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this,0f));
+                //}
+                if (Count <= 0)
+                {
+                    //PathController.DestroyBall(this);
+                    PathController.InsertBallInSequence(this, this);
+                    //PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this, 0f));
+                }
+            }
+        }
+        if (other.tag == "FireArrow")
+        {
+            foreach (var item in ObjectPoolManager.Instance.fireArrowPool)
+            {
+                Destroy(item.gameObject);
+            }
+            ObjectPoolManager.Instance.fireArrowPool.Clear();
+            //ObjectPoolManager.Instance.ReturnArrowToPool(other.gameObject);
+            //other.transform.position = Vector3.zero;
+            //other.transform.rotation = Quaternion.identity;
+            Count -= 3;
             for (int i = 0; i < countText.Length; i++)
             {
                 countText[i].text = Count.ToString();
