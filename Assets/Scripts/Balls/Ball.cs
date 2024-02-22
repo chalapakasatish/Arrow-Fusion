@@ -74,6 +74,10 @@ public class Ball : MonoBehaviour
             }
             if (Count <= 0)
             {
+                if(PathController.BallSequence.Count >= 8)
+                {
+                    PathController.InstantiatePowerup(transform);
+                }
                 GameManager.Instance.arrowShooterScript.isShooting = false;
                 for (int i = 0; i < countText.Length; i++)
                 {
@@ -136,6 +140,7 @@ public class Ball : MonoBehaviour
             GameManager.Instance.arrowShooterScript.isShooting = false;
             Debug.Log("Both Balls hit");
             PathController.InsertBallInSequence(this, other.GetComponent<Ball>());
+            
             //MustBeDestroyed = true;
             //PathController.DestroyBall(this);
             //PathController.StartCoroutine(PathController.DelayedCheckEqualBalls(this, 0f));

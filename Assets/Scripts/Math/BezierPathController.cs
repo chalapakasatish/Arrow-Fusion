@@ -148,7 +148,6 @@ public class BezierPathController : MonoBehaviour
             if (d < Factory.DistanceBetweenBalls)
             {
                 MoveBallBackward(BallSequence[i + 1].GetComponent<Ball>(), Mathf.Abs(d - Factory.DistanceBetweenBalls));
-
             }
             else
             {
@@ -691,6 +690,10 @@ public class BezierPathController : MonoBehaviour
 	void Start()
     {
         StartSequence(0);
+    }
+    public void InstantiatePowerup(Transform transform)
+    {
+        Instantiate(Factory.powerupPrefab,transform.position,Quaternion.identity);
     }
     #endregion MonoBehaviour
 }

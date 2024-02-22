@@ -16,7 +16,7 @@ public class ArrowShooter : MonoBehaviour
         FIREARROW
     }
     public PowerUpsEnum powerUpsEnum;
-    public event Action<PowerUpsEnum> powerUpAction;
+    public Action<PowerUpsEnum> powerUpAction;
     private void Awake()
     {
         powerUpsEnum = PowerUpsEnum.SINGLEARROW;//declaration enum
@@ -43,7 +43,7 @@ public class ArrowShooter : MonoBehaviour
     {
         if (other.TryGetComponent(out PowerupTrigger powerupTrigger))
         {
-            powerUpsEnum = (PowerUpsEnum)UnityEngine.Random.Range(0, 3);
+            powerUpsEnum = (PowerUpsEnum)UnityEngine.Random.Range(1, 3);
             powerUpAction?.Invoke(powerUpsEnum);
         }
     }

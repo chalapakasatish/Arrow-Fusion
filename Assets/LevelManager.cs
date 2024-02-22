@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static ArrowShooter;
+
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private int levelNumber;
@@ -9,6 +11,7 @@ public class LevelManager : MonoBehaviour
     public int LevelNumber { get => levelNumber; set => levelNumber = value; }
 
     public GameObject[] levelGameObjects;
+    public ArrowShooter arrowShooter;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,9 @@ public class LevelManager : MonoBehaviour
         LevelNumber++;
         PlayerPrefs.SetInt("LevelNumber", LevelNumber);
         GetLevels();
+        
+        arrowShooter.powerUpsEnum = (PowerUpsEnum)Random.Range(0, 1);
+        arrowShooter.powerUpAction?.Invoke(arrowShooter.powerUpsEnum);
     }
     public void RetryLevel()
     {

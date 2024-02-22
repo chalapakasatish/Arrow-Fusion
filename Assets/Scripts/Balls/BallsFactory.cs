@@ -9,6 +9,7 @@ public class BallsFactory : MonoBehaviour
     /// Ball prefab.
     /// </summary>
     public GameObject BallPrefab;
+    public GameObject powerupPrefab;  
 
     /// <summary>
     /// BeaierPathController script.

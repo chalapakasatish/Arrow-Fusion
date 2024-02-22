@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Linq;
 using UnityEngine;
+using static ArrowShooter;
 
 public class BallsTrap : MonoBehaviour
 {
@@ -34,7 +35,6 @@ public class BallsTrap : MonoBehaviour
             {
                 _win = true;
                 Debug.Log("GameWin");
-               
                 GameManager.Instance.uiManager.ShowPanel(GameManager.Instance.uiManager.gameWinPanel);
 
                 //GameWonMenu.active = true;
