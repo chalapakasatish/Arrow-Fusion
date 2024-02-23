@@ -7,12 +7,12 @@ public class ArrowShooter : MonoBehaviour
     public float movingSpeed;
     public float timeGapForShoot;
     public bool isShooting;
-    public Transform firstArrowPosition, secondArrowPosition;
+    public Transform firstArrowPosition, secondArrowPosition,thirdArrowPosition;
     
     public enum PowerUpsEnum
     {
         SINGLEARROW,
-        DOUBLEARROW,
+        TRIPLEARROW,
         FIREARROW
     }
     public PowerUpsEnum powerUpsEnum;
@@ -21,7 +21,8 @@ public class ArrowShooter : MonoBehaviour
     {
         powerUpsEnum = PowerUpsEnum.SINGLEARROW;//declaration enum
         powerUpAction += SwitchPowerups;// adding method to action
-        powerUpAction?.Invoke(powerUpsEnum);//calling using action parameters
+        //powerUpAction?.Invoke(powerUpsEnum);//calling using action parameters
+        isShooting = false;
     }
 
     public void SwitchPowerups(PowerUpsEnum powerUpsEnum)
@@ -31,8 +32,8 @@ public class ArrowShooter : MonoBehaviour
             case PowerUpsEnum.SINGLEARROW:
                 ShootArrow(1);
                 break;
-            case PowerUpsEnum.DOUBLEARROW:
-                ShootArrow(2);
+            case PowerUpsEnum.TRIPLEARROW:
+                ShootArrow(3);
                 break;
             case PowerUpsEnum.FIREARROW:
                 FireArrow();
@@ -93,14 +94,16 @@ public class ArrowShooter : MonoBehaviour
                 Rigidbody arrowRb = arrow.GetComponent<Rigidbody>();
                 arrowRb.AddForce(transform.forward * movingSpeed, ForceMode.Impulse);
                 break;
-            case 2:
+            case 3:
                 GameObject arrow1 = objectPoolManager.GetArrowFromPool(firstArrowPosition.transform.position, Quaternion.identity);
-                // Apply additional arrow behavior or force if needed
                 Rigidbody arrowRb1 = arrow1.GetComponent<Rigidbody>();
                 arrowRb1.AddForce(transform.forward * movingSpeed, ForceMode.Impulse);
-                GameObject arrow2 = objectPoolManager.GetArrowFromPool(secondArrowPosition.transform.position, Quaternion.identity);
+                GameObject arrow2 = objectPoolManager.GetArrowFromPool(secondArrowPosition.transform.position, secondArrowPosition.transform.rotation);
                 Rigidbody arrowRb2 = arrow2.GetComponent<Rigidbody>();
-                arrowRb2.AddForce(transform.forward * movingSpeed, ForceMode.Impulse);
+                arrowRb2.AddForce(arrow2.transform.forward * movingSpeed, ForceMode.Impulse);
+                GameObject arrow3 = objectPoolManager.GetArrowFromPool(thirdArrowPosition.transform.position, thirdArrowPosition.transform.rotation);
+                Rigidbody arrowRb3 = arrow3.GetComponent<Rigidbody>();
+                arrowRb3.AddForce(arrow3.transform.forward * movingSpeed, ForceMode.Impulse);
                 break;
         }
     }

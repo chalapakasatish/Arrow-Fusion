@@ -11,4 +11,12 @@ public class PowerupTrigger : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Start()
+    {
+        Invoke("DestroyPowerup", 2f);
+    }
+    public void DestroyPowerup()
+    {
+        Destroy(gameObject);
+    }
 }

@@ -34,10 +34,7 @@ public class Ball : MonoBehaviour
             countText[i].text = Count.ToString();
         }
     }
-    //private void Update()
-    //{
-    //    transform.localEulerAngles = Vector3.forward * 50f * Time.deltaTime;
-    //}
+
     public void SetBallId(int id)
     {
         BallId = id;
@@ -50,16 +47,32 @@ public class Ball : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if (MustBeDestroyed) Destroy(gameObject);
     }
-
+    private void OnTweenComplete()
+    {
+        //transform.localScale = initialScale;
+        LeanTween.scale(gameObject, new Vector3(2f, 2f, 2), 0.1f)
+                .setEase(LeanTweenType.linear);
+    }
     /// <summary>
     /// Interaction between objects.
     /// </summary>
     /// <param name="other"></param>
+    
+    private Vector3 initialScale;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Arrow")
         {
-            foreach(var item in ObjectPoolManager.Instance.arrowPool)
+            //transform.GetChild(0).GetComponent<MeshRenderer>().material = GameObject.FindGameObjectWithTag("BallsFactory").GetComponent<BallsFactory>().BonusMaterial;
+            //transform.GetChild(0).GetComponent<MeshRenderer>().material = (BallId == -1) ? GameObject.FindGameObjectWithTag("BallsFactory").GetComponent<BallsFactory>().BonusMaterial : GameObject.FindGameObjectWithTag("BallsFactory").GetComponent<BallsFactory>().AvailableMaterials[BallId];
+            //initialScale = transform.localScale;
+
+            LeanTween.scale(gameObject, new Vector3(2.5f, 2.5f, 2.5f), 0.1f)
+                .setEase(LeanTweenType.linear)
+                .setOnComplete(OnTweenComplete);
+
+            foreach (var item in ObjectPoolManager.Instance.arrowPool)
             {
                 Destroy(item.gameObject);
             }
@@ -100,11 +113,11 @@ public class Ball : MonoBehaviour
         }
         if (other.tag == "FireArrow")
         {
-            foreach (var item in ObjectPoolManager.Instance.fireArrowPool)
-            {
-                Destroy(item.gameObject);
-            }
-            ObjectPoolManager.Instance.fireArrowPool.Clear();
+            //foreach (var item in ObjectPoolManager.Instance.fireArrowPool)
+            //{
+            //    Destroy(item.gameObject);
+            //}
+            //ObjectPoolManager.Instance.fireArrowPool.Clear();
             //ObjectPoolManager.Instance.ReturnArrowToPool(other.gameObject);
             //other.transform.position = Vector3.zero;
             //other.transform.rotation = Quaternion.identity;
