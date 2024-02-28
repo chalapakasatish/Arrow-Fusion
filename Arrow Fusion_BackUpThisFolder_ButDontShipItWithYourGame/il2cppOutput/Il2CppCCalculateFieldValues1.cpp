@@ -14557,22 +14557,22 @@ struct AtlasNode_tE1393243E3FBC4D627662BB3BD7D37E36687987A
 	};
 };
 
-// Ball/<ShootCoroutine>d__16
-struct U3CShootCoroutineU3Ed__16_t2C310DC1A62604406485840F352FD7E19CC85AB8  : public RuntimeObject
+// Ball/<ShootCoroutine>d__18
+struct U3CShootCoroutineU3Ed__18_t930286C1A86ABB2FE5EB794FFFD1A3E480D96B53  : public RuntimeObject
 {
-	// System.Int32 Ball/<ShootCoroutine>d__16::<>1__state
+	// System.Int32 Ball/<ShootCoroutine>d__18::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object Ball/<ShootCoroutine>d__16::<>2__current
+	// System.Object Ball/<ShootCoroutine>d__18::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// Ball Ball/<ShootCoroutine>d__16::<>4__this
+	// Ball Ball/<ShootCoroutine>d__18::<>4__this
 	Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B* ___U3CU3E4__this_2;
-	// UnityEngine.Vector3 Ball/<ShootCoroutine>d__16::target
+	// UnityEngine.Vector3 Ball/<ShootCoroutine>d__18::target
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___target_3;
-	// System.Single Ball/<ShootCoroutine>d__16::time
+	// System.Single Ball/<ShootCoroutine>d__18::time
 	float ___time_4;
-	// System.Single Ball/<ShootCoroutine>d__16::<passedTime>5__2
+	// System.Single Ball/<ShootCoroutine>d__18::<passedTime>5__2
 	float ___U3CpassedTimeU3E5__2_5;
-	// UnityEngine.Vector3 Ball/<ShootCoroutine>d__16::<startPosition>5__3
+	// UnityEngine.Vector3 Ball/<ShootCoroutine>d__18::<startPosition>5__3
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___U3CstartPositionU3E5__3_6;
 };
 
@@ -21284,6 +21284,8 @@ struct Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B  : public MonoBehaviour_t5
 	int32_t ___count_8;
 	// TMPro.TMP_Text[] Ball::countText
 	TMP_TextU5BU5D_t12384CBAF397196B9A7886087BDC8C19D800C24F* ___countText_9;
+	// UnityEngine.Vector3 Ball::initialScale
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___initialScale_10;
 };
 
 // BallRotation
@@ -29742,9 +29744,9 @@ struct YogaConfig_tE8B56F99460C291C1F7F46DBD8BAC9F0B653A345_StaticFields
 
 // UnityEngine.Rendering.AtlasAllocatorDynamic/AtlasNode
 
-// Ball/<ShootCoroutine>d__16
+// Ball/<ShootCoroutine>d__18
 
-// Ball/<ShootCoroutine>d__16
+// Ball/<ShootCoroutine>d__18
 
 // BezierPathController/<ShiftBallTo>d__46
 
@@ -34721,10 +34723,10 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4348[4] =
 	static_cast<int32_t>(offsetof(U3CSelfDestroyCoroutineU3Ed__14_tDD6BEF1DB0496812DA9E2D4999A19EE889A9C828, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CSelfDestroyCoroutineU3Ed__14_tDD6BEF1DB0496812DA9E2D4999A19EE889A9C828, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CSelfDestroyCoroutineU3Ed__14_tDD6BEF1DB0496812DA9E2D4999A19EE889A9C828, ___delay_2)),static_cast<int32_t>(offsetof(U3CSelfDestroyCoroutineU3Ed__14_tDD6BEF1DB0496812DA9E2D4999A19EE889A9C828, ___U3CU3E4__this_3)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4349[7] = 
 {
-	static_cast<int32_t>(offsetof(U3CShootCoroutineU3Ed__16_t2C310DC1A62604406485840F352FD7E19CC85AB8, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CShootCoroutineU3Ed__16_t2C310DC1A62604406485840F352FD7E19CC85AB8, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CShootCoroutineU3Ed__16_t2C310DC1A62604406485840F352FD7E19CC85AB8, ___U3CU3E4__this_2)),static_cast<int32_t>(offsetof(U3CShootCoroutineU3Ed__16_t2C310DC1A62604406485840F352FD7E19CC85AB8, ___target_3)),static_cast<int32_t>(offsetof(U3CShootCoroutineU3Ed__16_t2C310DC1A62604406485840F352FD7E19CC85AB8, ___time_4)),static_cast<int32_t>(offsetof(U3CShootCoroutineU3Ed__16_t2C310DC1A62604406485840F352FD7E19CC85AB8, ___U3CpassedTimeU3E5__2_5)),static_cast<int32_t>(offsetof(U3CShootCoroutineU3Ed__16_t2C310DC1A62604406485840F352FD7E19CC85AB8, ___U3CstartPositionU3E5__3_6)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4350[6] = 
+	static_cast<int32_t>(offsetof(U3CShootCoroutineU3Ed__18_t930286C1A86ABB2FE5EB794FFFD1A3E480D96B53, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CShootCoroutineU3Ed__18_t930286C1A86ABB2FE5EB794FFFD1A3E480D96B53, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CShootCoroutineU3Ed__18_t930286C1A86ABB2FE5EB794FFFD1A3E480D96B53, ___U3CU3E4__this_2)),static_cast<int32_t>(offsetof(U3CShootCoroutineU3Ed__18_t930286C1A86ABB2FE5EB794FFFD1A3E480D96B53, ___target_3)),static_cast<int32_t>(offsetof(U3CShootCoroutineU3Ed__18_t930286C1A86ABB2FE5EB794FFFD1A3E480D96B53, ___time_4)),static_cast<int32_t>(offsetof(U3CShootCoroutineU3Ed__18_t930286C1A86ABB2FE5EB794FFFD1A3E480D96B53, ___U3CpassedTimeU3E5__2_5)),static_cast<int32_t>(offsetof(U3CShootCoroutineU3Ed__18_t930286C1A86ABB2FE5EB794FFFD1A3E480D96B53, ___U3CstartPositionU3E5__3_6)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4350[7] = 
 {
-	static_cast<int32_t>(offsetof(Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B, ___NextNode_4)),static_cast<int32_t>(offsetof(Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B, ___U3CBallIdU3Ek__BackingField_5)),static_cast<int32_t>(offsetof(Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B, ___PathController_6)),static_cast<int32_t>(offsetof(Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B, ___MustBeDestroyed_7)),static_cast<int32_t>(offsetof(Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B, ___count_8)),static_cast<int32_t>(offsetof(Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B, ___countText_9)),};
+	static_cast<int32_t>(offsetof(Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B, ___NextNode_4)),static_cast<int32_t>(offsetof(Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B, ___U3CBallIdU3Ek__BackingField_5)),static_cast<int32_t>(offsetof(Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B, ___PathController_6)),static_cast<int32_t>(offsetof(Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B, ___MustBeDestroyed_7)),static_cast<int32_t>(offsetof(Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B, ___count_8)),static_cast<int32_t>(offsetof(Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B, ___countText_9)),static_cast<int32_t>(offsetof(Ball_t3B9BED2176F4B268C18E329E499D8EC9914B5E2B, ___initialScale_10)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4351[3] = 
 {
 	static_cast<int32_t>(offsetof(U3CShootDelayCoroutineU3Ed__14_t63AA030071B0BC9907A69DAC82FE18AA621A945F, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CShootDelayCoroutineU3Ed__14_t63AA030071B0BC9907A69DAC82FE18AA621A945F, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CShootDelayCoroutineU3Ed__14_t63AA030071B0BC9907A69DAC82FE18AA621A945F, ___U3CU3E4__this_2)),};
