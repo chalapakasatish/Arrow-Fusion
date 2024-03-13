@@ -8,7 +8,7 @@ public class ObjectPoolManager : MonoBehaviour
     {
         Instance = this;
     }
-    public GameObject arrowPrefab;
+    public GameObject[] arrowPrefab;
     public GameObject fireArrowPrefab;
     public int poolSize = 2;
 
@@ -25,7 +25,7 @@ public class ObjectPoolManager : MonoBehaviour
     {
         for (int i = 0; i < poolSize; i++)
         {
-            GameObject arrow = Instantiate(arrowPrefab);
+            GameObject arrow = Instantiate(arrowPrefab[i]);
             arrow.SetActive(false);
             arrowPool.Add(arrow);
         }
@@ -45,7 +45,7 @@ public class ObjectPoolManager : MonoBehaviour
         }
 
         // If no inactive arrows are found, expand the pool
-        GameObject newArrow = Instantiate(arrowPrefab);
+        GameObject newArrow = Instantiate(arrowPrefab[Random.Range(0,arrowPrefab.Length)]);
         newArrow.transform.position = position;
         newArrow.transform.rotation = rotation;
         arrowPool.Add(newArrow);

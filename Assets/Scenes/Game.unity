@@ -617,8 +617,8 @@ MonoBehaviour:
   levelNumber: 0
   levelGameObjects:
   - {fileID: 919132148713604071}
-  - {fileID: 919132148691573602}
   - {fileID: 8442095590507646559}
+  - {fileID: 919132148691573602}
   arrowShooter: {fileID: 947700618}
 --- !u!4 &236845967
 Transform:
@@ -3864,7 +3864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPoolManager: {fileID: 1464753734}
   movingSpeed: 25
-  timeGapForShoot: 0.1
+  timeGapForShoot: 1.5
   isShooting: 0
   firstArrowPosition: {fileID: 2031668993}
   secondArrowPosition: {fileID: 2139105386}
@@ -4277,6 +4277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowShooterScript: {fileID: 947700618}
   uiManager: {fileID: 1443991646}
+  howmanyTimesPowerupTook: 1
 --- !u!4 &1009244635
 Transform:
   m_ObjectHideFlags: 0
@@ -5815,8 +5816,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1bed2809db5d64893d806f4abfba36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 1261555563981962, guid: b5896b5d06e7f9a4ab10fba5a442f558,
-    type: 3}
+  arrowPrefab:
+  - {fileID: 1261555563981962, guid: 1c161e9e75ff46447a2c91c657406fab, type: 3}
+  - {fileID: 1261555563981962, guid: 217872e30c031f74ab80619458d0d4b9, type: 3}
+  - {fileID: 1261555563981962, guid: 25c08d25f334be946af57535bfaf325f, type: 3}
+  - {fileID: 1261555563981962, guid: cf78358edc4126947bfdcfceebfa8f6e, type: 3}
+  - {fileID: 1261555563981962, guid: f38e19b19b3c3444fb21e32c42a9c4eb, type: 3}
+  - {fileID: 1261555563981962, guid: 85b864a67c988524ab0d19e56df8a659, type: 3}
+  - {fileID: 1261555563981962, guid: 6c4b8fb6792b3ef4a8f7c924f752aaa3, type: 3}
+  - {fileID: 1261555563981962, guid: aeae6bd95a6b4c3488716d2b61009a59, type: 3}
+  - {fileID: 1261555563981962, guid: 2a9348622f91ec54d95147b6a160dc2c, type: 3}
+  - {fileID: 1261555563981962, guid: 2cb8219e9229f7e4fb49c0ccf3298253, type: 3}
   fireArrowPrefab: {fileID: 7355409606175830349, guid: 29485e6043677164ca6d3d063da333db,
     type: 3}
   poolSize: 0
@@ -8048,7 +8058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10532d3d007b8ce46953f9417cb224a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 15
+  movementSpeed: 10
   playerAnimator: {fileID: 1149525007}
 --- !u!1 &1985589427
 GameObject:
@@ -10151,7 +10161,7 @@ Transform:
   - {fileID: 394255632701163402}
   - {fileID: 944820010086008991}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &543450652966590813
 Transform:
@@ -28370,7 +28380,7 @@ Transform:
   - {fileID: 779582139119664099}
   - {fileID: 1182895269061117699}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &9127219848323643957
 MeshFilter:

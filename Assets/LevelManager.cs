@@ -39,6 +39,7 @@ public class LevelManager : MonoBehaviour
         
         arrowShooter.powerUpsEnum = (PowerUpsEnum)Random.Range(0, 1);
         arrowShooter.powerUpAction?.Invoke(arrowShooter.powerUpsEnum);
+        GameManager.Instance.howmanyTimesPowerupTook = 1;
     }
     public void RetryLevel()
     {

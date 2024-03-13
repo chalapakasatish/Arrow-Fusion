@@ -13,7 +13,7 @@ public class PowerupTrigger : MonoBehaviour
     }
     private void Start()
     {
-        Invoke("DestroyPowerup", 2f);
+        Invoke("DestroyPowerup", 3f);
     }
     public void DestroyPowerup()
     {

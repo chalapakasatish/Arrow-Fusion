@@ -21,7 +21,6 @@ public class ArrowShooter : MonoBehaviour
     {
         powerUpsEnum = PowerUpsEnum.SINGLEARROW;//declaration enum
         powerUpAction += SwitchPowerups;// adding method to action
-        //powerUpAction?.Invoke(powerUpsEnum);//calling using action parameters
         isShooting = false;
     }
 
@@ -75,7 +74,7 @@ public class ArrowShooter : MonoBehaviour
         if (timeGapForShoot <= 0 && isShooting)
         {
             powerUpAction?.Invoke(powerUpsEnum);
-            timeGapForShoot = 1;
+            timeGapForShoot = 1.5f;
         }
         else
         {

@@ -87,10 +87,12 @@ public class Ball : MonoBehaviour
             }
             if (Count <= 0)
             {
-                if(PathController.BallSequence.Count >= 8)
+                if(PathController.BallSequence.Count >= 8 && GameManager.Instance.howmanyTimesPowerupTook == 1)
                 {
                     PathController.InstantiatePowerup(transform);
+                    GameManager.Instance.howmanyTimesPowerupTook = 0;
                 }
+
                 GameManager.Instance.arrowShooterScript.isShooting = false;
                 for (int i = 0; i < countText.Length; i++)
                 {
@@ -121,7 +123,7 @@ public class Ball : MonoBehaviour
             //ObjectPoolManager.Instance.ReturnArrowToPool(other.gameObject);
             //other.transform.position = Vector3.zero;
             //other.transform.rotation = Quaternion.identity;
-            Count -= 3;
+            Count -= 10;
             for (int i = 0; i < countText.Length; i++)
             {
                 countText[i].text = Count.ToString();
